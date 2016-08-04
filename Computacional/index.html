@@ -61,12 +61,12 @@
     <h3><strong>Cápitulo I - Introducción a R</strong></h3>
 
 <ul class = "build incremental">
-<li>Generalidades del software R
+<li>Generalidades del <a href="https://www.r-project.org/">software R</a>
 
 <ul>
-<li>Historia, Filosofía, <code>CRAN</code> </li>
+<li>Historia, Filosofía, <a href="https://cran.r-project.org/"><code>CRAN</code></a> , Ayuda de R. </li>
 </ul></li>
-<li>Entorno de desarrollo integrado (IDE)</li>
+<li>Entorno de desarrollo integrado (IDE) <a href="https://www.rstudio.com/">RStudio</a></li>
 <li>Aritmética con R </li>
 <li>Números, Operadores Lógicos y Funciones básicas de R.</li>
 <li>Asignación de variables, expresiones e impresiones de datos.<br></li>
@@ -216,6 +216,110 @@
   <!-- Presenter Notes -->
 </slide>
 
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Generalidades de <code>R</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li><h3>Que es <code>R</code>?</h3>
+
+<p>En esencia <code>R</code> es un dialecto de <code>S</code></p></li>
+<li><h3>Que es <code>S</code>?</h3>
+
+<p><code>S</code> es un lenguaje de programación desarrollado por <a href="https://es.wikipedia.org/wiki/John_Chambers"><em><strong>John Chambers</strong></em></a> en el laboratorio <em>now-defunt de Bell</em>, inicio en 1976 como un ambiente de análisis estadístico e inicialmente fue implementado como una serie de librerías <em>FORTRAN</em> para implementar rutinas que eran muy tediosas de hacer una y otra vez. Articulo completo <a href="http://dscienceco.weebly.com/inicio/march-20th-20151">aquí</a> </p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Generalidades de <code>R</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Un poco de historia</h3>
+
+<p><code>R</code> es un desarrollo relativamente reciente, fue creado en 1991 en <em><strong>Nueva Zelanda</strong></em>  en la <a href="https://www.auckland.ac.nz/en.html"><em><strong>Universidad de Auckland</strong></em></a> por los profesores <a href="https://en.wikipedia.org/wiki/Ross_Ihaka"><em><strong>Ross Ihaka</strong></em></a> y  <a href="https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician"><em><strong>Robert Gentleman</strong></em></a> de allí lo de &quot;R&quot;, en 1993 se dio el primer anuncio de que R era libre, en 1995 Martin Michler convence a Ross y Robert de usar la licencia GNU Publica que hace a R un software libre, en 1996 se creó una lista de correo, así que existen dos (R-help y R-devel), en 1997 fue el año en que fue creado el llamado <em>R Core Group</em> el cual aún contiene mucha de la gente que desarrollo <em><strong>S-PLUS</strong></em>, este grupo controla el código fuente de <code>R</code>, lo que implica que dicho código fuente solo puede ser modificado por los miembros de este grupo y por ultimo ya en el 2000 la versión 1.0.0 de R fue lanzada. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Generalidades de <code>R</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Características de R</h3>
+
+<ul class = "build incremental">
+<li><p>La sintaxis es similar a la S, lo que hace la transición de usuarios de <em><strong>S-PLUS</strong></em>  muy sencilla.</p></li>
+<li><p><code>R</code> es libre, claro en el sentido de que se puede simplemente descargar de la web.</p></li>
+<li><p>Corre o funciona en casi todas las plataformas o <code>SO</code> estándar en el mercado (inclusive en la <em>Play Station</em>).</p></li>
+<li><p>Tiene frecuentes lanzamientos de versiones (Lo que implica un desarrollo activo)</p></li>
+<li><p>Sa capacidades en cuanto a generación gráficas es muy sofisticadas, más que la mayoría de cualquier otro paquete estadístico. </p></li>
+<li><p>Es muy útil para trabajos interactivos, ya que se basa en un lenguaje orientado a objetos, también se usa para desarrollar nuevas herramientas</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Generalidades de <code>R</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Limitaciones de R</h3>
+
+<ul class = "build incremental">
+<li><p><code>R</code> ciertamente tiene una serie de inconvenientes. Para empezar, <code>R</code> se basa esencialmente en la tecnología de casi 50 años, que se remonta al sistema <code>S</code> original desarrollado en los Laboratorios Bell. <code>R</code> No fue originalmente construido en poco soporte para gráficos dinámicos o 3-D.</p></li>
+<li><p>Otra limitación de <code>R</code> que es comúnmente citado  es que los objetos generalmente deben ser almacenados memoria física. Esto es en parte debido a las reglas de alcance del lenguaje, pero en general, R es más acaparador de memoria que otros paquetes estadísticos.</p></li>
+<li><p>A un nivel más alto de una &quot;limitación&quot; de R, se tiene que su funcionalidad se basa en demanda de los consumidores y contribuciones (voluntariado) de los usuarios. Esto conlleva a que si nadie aplica tu método favorito, entonces es tu trabajo ponerlo en práctica (o tienes que pagar a alguien para que lo haga). </p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Generalidades de <code>R</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Diseño del sistema de R</h3>
+
+<p>El sistema primario R está disponible en el CRAN <em>(Red de Archivo General de R)</em>. El CRAN también recibe muchos paquetes de <em>add-on</em> que se pueden utilizar para ampliar la funcionalidad de R. </p>
+
+<h3>Instalación</h3>
+
+<p>La primera cosa que hay que hacer para empezar con <code>R</code> es instalarlo en su ordenador. R funciona en casi todas las plataformas disponibles, incluyendo Windows, Mac OS X, y Linux. </p>
+
+<ul class = "build incremental">
+<li>Para Windows vaya a <a href="http://cran.r-project.org/bin/windows/">http://cran.r-project.org/bin/windows/</a></li>
+<li>Para Mac OS X vaya a <a href="http://cran.r-project.org/bin/macosx/">http://cran.r-project.org/bin/macosx/</a></li>
+<li>Para Linux vaya a <a href="http://cran.r-project.org/bin/linux/">http://cran.r-project.org/bin/linux/</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Generalidades de <code>R</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>IDE</h3>
+
+<p>Existe un entorno de desarrollo integrado disponible para R que fue desarrollado por <em>RStudio</em>. Este <em>IDE</em>, tiene un buen editor de texto gratuito, hay un visor de objetos R, y tiene todoa una serie de otras características interesantes que se integran. Para instalarlo vaya aquí <a href="http://rstudio.com">http://rstudio.com</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
     <slide class="backdrop"></slide>
   </slides>
   <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
@@ -260,6 +364,42 @@
       <a href="#" target="_self" rel='tooltip' 
         data-slide=7 title='Contenido Programatico'>
          7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Generalidades de <code>R</code>'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Generalidades de <code>R</code>'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Generalidades de <code>R</code>'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Generalidades de <code>R</code>'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Generalidades de <code>R</code>'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Generalidades de <code>R</code>'>
+         13
       </a>
     </li>
   </ul>

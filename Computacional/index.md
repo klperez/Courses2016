@@ -17,9 +17,9 @@ knit        : slidify::knit2slides
 
 ### **Cápitulo I - Introducción a R**
 
-> - Generalidades del software R
-    + Historia, Filosofía, `CRAN` 
-> - Entorno de desarrollo integrado (IDE)
+> - Generalidades del [software R](https://www.r-project.org/)
+    + Historia, Filosofía, [`CRAN`](https://cran.r-project.org/) , Ayuda de R. 
+> - Entorno de desarrollo integrado (IDE) [RStudio](https://www.rstudio.com/)
 > - Aritmética con R 
 > - Números, Operadores Lógicos y Funciones básicas de R.
 > - Asignación de variables, expresiones e impresiones de datos.    
@@ -109,4 +109,77 @@ knit        : slidify::knit2slides
 > - Introducción a $\LaTeX$
 > - Introducción al control de versiones `GitHub`
 > - Publicación de informes en `R MarkDown` - `GitHub`, `Rpubs`, `shinyapps.io`
+
+---
+
+## Generalidades de `R` 
+
+> - ### Que es `R`?
+En esencia `R` es un dialecto de `S`
+
+> - ### Que es `S`?
+`S` es un lenguaje de programación desarrollado por [_**John Chambers**_](https://es.wikipedia.org/wiki/John_Chambers) en el laboratorio _now-defunt de Bell_, inicio en 1976 como un ambiente de análisis estadístico e inicialmente fue implementado como una serie de librerías _FORTRAN_ para implementar rutinas que eran muy tediosas de hacer una y otra vez. Articulo completo [aquí](http://dscienceco.weebly.com/inicio/march-20th-20151) 
+
+---
+
+## Generalidades de `R` 
+
+### Un poco de historia 
+
+`R` es un desarrollo relativamente reciente, fue creado en 1991 en _**Nueva Zelanda**_  en la [_**Universidad de Auckland**_](https://www.auckland.ac.nz/en.html) por los profesores [_**Ross Ihaka**_](https://en.wikipedia.org/wiki/Ross_Ihaka) y  [_**Robert Gentleman**_](https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician) de allí lo de "R", en 1993 se dio el primer anuncio de que R era libre, en 1995 Martin Michler convence a Ross y Robert de usar la licencia GNU Publica que hace a R un software libre, en 1996 se creó una lista de correo, así que existen dos (R-help y R-devel), en 1997 fue el año en que fue creado el llamado _R Core Group_ el cual aún contiene mucha de la gente que desarrollo _**S-PLUS**_, este grupo controla el código fuente de `R`, lo que implica que dicho código fuente solo puede ser modificado por los miembros de este grupo y por ultimo ya en el 2000 la versión 1.0.0 de R fue lanzada. 
+
+--- 
+
+## Generalidades de `R`
+
+### Características de R
+
+> - La sintaxis es similar a la S, lo que hace la transición de usuarios de _**S-PLUS**_  muy sencilla.
+
+> - `R` es libre, claro en el sentido de que se puede simplemente descargar de la web.
+
+> - Corre o funciona en casi todas las plataformas o `SO` estándar en el mercado (inclusive en la _Play Station_).
+
+> - Tiene frecuentes lanzamientos de versiones (Lo que implica un desarrollo activo)
+
+> - Sa capacidades en cuanto a generación gráficas es muy sofisticadas, más que la mayoría de cualquier otro paquete estadístico. 
+
+> - Es muy útil para trabajos interactivos, ya que se basa en un lenguaje orientado a objetos, también se usa para desarrollar nuevas herramientas
+
+---
+
+## Generalidades de `R`
+
+### Limitaciones de R 
+
+> - `R` ciertamente tiene una serie de inconvenientes. Para empezar, `R` se basa esencialmente en la tecnología de casi 50 años, que se remonta al sistema `S` original desarrollado en los Laboratorios Bell. `R` No fue originalmente construido en poco soporte para gráficos dinámicos o 3-D.
+
+> - Otra limitación de `R` que es comúnmente citado  es que los objetos generalmente deben ser almacenados memoria física. Esto es en parte debido a las reglas de alcance del lenguaje, pero en general, R es más acaparador de memoria que otros paquetes estadísticos.
+
+> - A un nivel más alto de una "limitación" de R, se tiene que su funcionalidad se basa en demanda de los consumidores y contribuciones (voluntariado) de los usuarios. Esto conlleva a que si nadie aplica tu método favorito, entonces es tu trabajo ponerlo en práctica (o tienes que pagar a alguien para que lo haga). 
+
+---
+
+## Generalidades de `R`
+
+### Diseño del sistema de R
+
+El sistema primario R está disponible en el CRAN _(Red de Archivo General de R)_. El CRAN también recibe muchos paquetes de _add-on_ que se pueden utilizar para ampliar la funcionalidad de R. 
+
+### Instalación 
+
+La primera cosa que hay que hacer para empezar con `R` es instalarlo en su ordenador. R funciona en casi todas las plataformas disponibles, incluyendo Windows, Mac OS X, y Linux. 
+
+> - Para Windows vaya a <http://cran.r-project.org/bin/windows/>
+> - Para Mac OS X vaya a <http://cran.r-project.org/bin/macosx/>
+> - Para Linux vaya a <http://cran.r-project.org/bin/linux/>
+
+---
+
+## Generalidades de `R`
+
+### IDE
+
+Existe un entorno de desarrollo integrado disponible para R que fue desarrollado por _RStudio_. Este _IDE_, tiene un buen editor de texto gratuito, hay un visor de objetos R, y tiene todoa una serie de otras características interesantes que se integran. Para instalarlo vaya aquí <http://rstudio.com>
+ 
 
