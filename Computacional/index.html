@@ -314,8 +314,624 @@
   <article data-timings="">
     <h3>IDE</h3>
 
-<p>Existe un entorno de desarrollo integrado disponible para R que fue desarrollado por <em>RStudio</em>. Este <em>IDE</em>, tiene un buen editor de texto gratuito, hay un visor de objetos R, y tiene todoa una serie de otras características interesantes que se integran. Para instalarlo vaya aquí <a href="http://rstudio.com">http://rstudio.com</a></p>
+<p>Existe un entorno de desarrollo integrado disponible para R que fue desarrollado por <em>RStudio</em>. Este <em>IDE</em>, tiene un buen editor de texto gratuito, hay un visor de objetos R, y tiene toda una serie de otras características interesantes que se integran. Para instalarlo vaya aquí <a href="http://rstudio.com">http://rstudio.com</a></p>
 
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>Aritmética con <code>R</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <p>En su forma más básica, <code>R</code> se puede utilizar como una calculadora, considerando los siguientes operadores aritméticos.</p>
+
+<ul>
+<li>Suma: <code>+</code></li>
+<li>Resta: <code>-</code></li>
+<li>Multiplicación: <code>*</code></li>
+<li>División: <code>/</code></li>
+<li>Potencia: <code>^</code></li>
+<li>Modulo: <code>%%</code></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Aritmética con <code>R</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r"># Una suma 
+5 + 5 
+</code></pre>
+
+<pre><code>## [1] 10
+</code></pre>
+
+<pre><code class="r"># Una resta
+5 - 5 
+</code></pre>
+
+<pre><code>## [1] 0
+</code></pre>
+
+<pre><code class="r"># Una multiplicación 
+3 * 5
+</code></pre>
+
+<pre><code>## [1] 15
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Aritmética con <code>R</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r"># Una división 
+(5 + 5)/2 
+</code></pre>
+
+<pre><code>## [1] 5
+</code></pre>
+
+<pre><code class="r"># Una potencia
+2^5
+</code></pre>
+
+<pre><code>## [1] 32
+</code></pre>
+
+<pre><code class="r"># Un modulo por divisón 
+28 %% 6
+</code></pre>
+
+<pre><code>## [1] 4
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>Números en R</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li>Generalmente los números en R son tratados como objetos númericos (p.e. Los números reales de doble precisión)</li>
+<li>Si específicamente quieres un entero, necesitas el prefijo <code>L</code></li>
+<li>Ej: Ingresar <code>1</code> te da un objeto numérico; ingresar <code>1L</code>
+explicita mente te da un entero.</li>
+<li>también existen números especiales <code>Inf</code> que representa infinito;
+e.j. <code>1 / 0</code>; <code>Inf</code> puede ser utilizado en cálculos ordinarios;
+e.j. <code>1 / Inf</code> es 0</li>
+<li>El valor <code>NaN</code> representa un valor no definido (“no es número”);
+e.j. 0 / 0; <code>NaN</code> también se puede obtener a través de un dato faltante (Veremos esto más tarde)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>Tipos de datos en <code>R</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <p><code>R</code> tiene cinco clases de datos básicos o “atómicos”:</p>
+
+<ul class = "build incremental">
+<li>character (caracteres)</li>
+<li>numeric (números reales)</li>
+<li>integer (enteros)</li>
+<li>complex (complejos)</li>
+<li>logical (True/False)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>Tipos de datos en <code>R</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r"># Declaración de variables de distintos tipos 
+my_numeric &lt;- 42
+my_character &lt;- &quot;forty-two&quot;
+my_logical &lt;- FALSE 
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>Tipos de datos en <code>R</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r"># Observar que tipos de datos son
+class(my_numeric)
+</code></pre>
+
+<pre><code>## [1] &quot;numeric&quot;
+</code></pre>
+
+<pre><code class="r">class(my_character)
+</code></pre>
+
+<pre><code>## [1] &quot;character&quot;
+</code></pre>
+
+<pre><code class="r">class(my_logical)
+</code></pre>
+
+<pre><code>## [1] &quot;logical&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>Operadores relacionales</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>La forma más básica de comparación es la igualdad, veamos brevemente como es la sintaxis de dichas comparaciones en <code>R</code>.</p>
+
+<ul>
+<li>Igualdad: <code>==</code></li>
+<li>Desigualdad: <code>!=</code> </li>
+</ul>
+
+<pre><code class="r"># Comparación de lógicos
+TRUE == FALSE
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<pre><code class="r"># Comparación de númericos 
+(-6*14) != (17-101)
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-22" style="background:;">
+  <hgroup>
+    <h2>Operadores relacionales</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r"># Comparación de cadena de caracteres 
+
+&quot;useR&quot; == &quot;user&quot;
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<pre><code class="r"># Comparación de lógico con númerico
+TRUE == 1
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-23" style="background:;">
+  <hgroup>
+    <h2>Operadores de comparación</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>De manera similar a cualquier otro lenguaje de programación, <code>R</code> tiene las operaciones de comparación definidas por </p>
+
+<ul>
+<li>Mayor que: <code>&gt;</code></li>
+<li>Menor que: <code>&lt;</code></li>
+<li>Mayor o igual: <code>&gt;=</code></li>
+<li>Menor o igual: <code>&lt;=</code></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-24" style="background:;">
+  <hgroup>
+    <h2>Operadores de comparación</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r"># Comparación de números
+(-6*5+2) &gt;= (-10+1)
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<pre><code class="r"># Comparación de cadenas de caracteres 
+&quot;raining&quot; &lt;= &quot;raining dogs&quot;
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="r"># Comparación de lógicos 
+TRUE &gt; FALSE
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-25" style="background:;">
+  <hgroup>
+    <h2>Operadores lógicos</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>La sintaxis de los operadores lógicos en <code>R</code>, se muestra a continuación</p>
+
+<ul>
+<li>Operador &quot;y&quot;: <code>&amp;</code></li>
+<li>Operador &quot;o&quot;: <code>|</code></li>
+<li>Operador &quot;negación&quot;: <code>!</code></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-26" style="background:;">
+  <hgroup>
+    <h2>Operadores lógicos <code>&amp;</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r"># Solo si ambos son ciertos 
+TRUE &amp; TRUE 
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="r">FALSE &amp; TRUE  
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-27" style="background:;">
+  <hgroup>
+    <h2>Operadores lógicos <code>&amp;</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r"># Si alguno de ellos es falso 
+TRUE &amp; FALSE
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<pre><code class="r">FALSE &amp; FALSE
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-28" style="background:;">
+  <hgroup>
+    <h2>Operadores lógicos <code>|</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r"># Si alguno de ellos es verdadero
+TRUE | TRUE 
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="r">FALSE | TRUE  
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-29" style="background:;">
+  <hgroup>
+    <h2>Operadores lógicos <code>|</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r"># Si ambos son falsos
+TRUE | FALSE
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="r">FALSE | FALSE
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-30" style="background:;">
+  <hgroup>
+    <h2>Operadores lógicos <code>!</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">!TRUE
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<pre><code class="r">!FALSE
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-31" style="background:;">
+  <hgroup>
+    <h2>Asignación de variables</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>las expresiones pueden ser escritas en la consola de <code>R</code> directamente (Interactividad). </p>
+
+<p>El símbolo <code>&lt;-</code> es el operador asignación y nos permite guardar <em><strong>variables</strong></em> en memoria.   </p>
+
+<pre><code class="r">x &lt;- 1
+print(x)
+</code></pre>
+
+<pre><code>## [1] 1
+</code></pre>
+
+<pre><code class="r">x
+</code></pre>
+
+<pre><code>## [1] 1
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-32" style="background:;">
+  <hgroup>
+    <h2>Asignación de variables</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">msg &lt;- &quot;hola&quot;
+print(msg)
+</code></pre>
+
+<pre><code>## [1] &quot;hola&quot;
+</code></pre>
+
+<pre><code class="r">msg
+</code></pre>
+
+<pre><code>## [1] &quot;hola&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-33" style="background:;">
+  <hgroup>
+    <h2>Asignación de variables</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r"># Se asigna un valor a las variables llamadas &#39;my_apples&#39; y &#39;my_oranges&#39;
+my_apples &lt;- 5
+my_oranges&lt;-6
+
+# Suma esa dos variables 
+(my_apples+my_oranges )
+</code></pre>
+
+<pre><code>## [1] 11
+</code></pre>
+
+<pre><code class="r"># Crea una nueva variable llamada &#39;my_fruit&#39;
+my_fruit&lt;-(my_apples+my_oranges )
+my_fruit
+</code></pre>
+
+<pre><code>## [1] 11
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-34" style="background:;">
+  <hgroup>
+    <h2>Asignación de variables</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r"># Asigna un valor a la variable &#39;my_apples&#39;
+my_apples &lt;- 5 
+# Imprime el valor de &#39;my_apples&#39;
+my_apples       
+</code></pre>
+
+<pre><code>## [1] 5
+</code></pre>
+
+<pre><code class="r"># Asigna el valor a la variable &quot;my_oranges&quot; y la imprime
+my_oranges &lt;- &quot;six&quot; 
+my_oranges &lt;-6
+# Nueva varible que contiene el total. 
+my_fruit &lt;- my_apples + my_oranges 
+my_fruit
+</code></pre>
+
+<pre><code>## [1] 11
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-35" style="background:;">
+  <hgroup>
+    <h2>Funciones básicas de matematicas en <code>R</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Trigonométricas: <code>sin</code>, <code>cos</code>, <code>tan</code>, <code>asin</code>, <code>acos</code>, <code>atan</code>, <code>atan2</code>, <code>pi</code> </li>
+<li>Aritméticas: <code>sum</code>, <code>prod</code>, <code>diff</code>, <code>cumsum</code>, <code>cumprod</code>, <code>min</code>, <code>max</code>, <code>cummin</code>, <code>cummax</code></li>
+<li>Estadísticas: <code>range</code>, <code>mean</code>, <code>median</code>, <code>sd</code>, <code>var</code>, <code>cov</code>, <code>cor</code>, </li>
+<li>Álgebra: <code>solve</code>, <code>eigen</code>, <code>Arg</code>, <code>t</code>, <code>diag</code></li>
+<li>Misceláneas: <code>abs</code>, <code>round</code>, <code>log</code>, <code>log10</code>, <code>exp</code>, <code>sqrt</code>, <code>rank</code>, <code>scale</code>, etc.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-36" style="background:;">
+  <hgroup>
+    <h2>Objetos en <code>R</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <p>En <code>R</code> existen una serie de objetos comunes al manejo de todos los tipos de datos que conforman la base de las operaciones de cualquier cálculo. </p>
+
+<ul>
+<li>Vectores: <code>vector</code></li>
+<li>Matrices: <code>matrix</code> </li>
+<li>Arreglos: <code>array</code></li>
+<li>Factores: <code>factor</code></li>
+<li>Marcos de datos: <code>data.frame</code></li>
+<li>Listas: <code>list</code></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-37" style="background:;">
+  <hgroup>
+    <h2>Atributos de objetos en <code>R</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Los objetos en R suelen tener ciertos atributos</p>
+
+<ul>
+<li>names, dimnames (Nombres)</li>
+<li>dimensions (p.e. matrices, arreglos)</li>
+<li>class (Clase)</li>
+<li>length (Longitud)</li>
+<li>Otros  attributos/metadata definidos por el usuario</li>
+</ul>
+
+<p>Los atributos de un objeto pueden ser accesados por la función <code>attributes</code></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-38" style="background:;">
+  <hgroup>
+    <h2>Vectores</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>El objeto más básico de <code>R</code> es el vector</p>
+
+<ul>
+<li>Un vector solo puede contener objetos de la misma clase</li>
+<li>Pero: La única excepción son las <em><em>listas</em></em>, las cuales representan un vector que  puede contener distintos tipos de objetos (De hecho, esa es la razón por la que las utilizamos)</li>
+</ul>
+
+<p>Los vectores vacios pueden ser creados con la función <code>vector()</code>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-39" style="background:;">
+  <hgroup>
+    <h2>Creando vectores</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>La función <code>c()</code> puede ser utilizada para crear objetos tipo vector.</p>
+
+<pre><code class="r">x &lt;- c(0.5, 0.6)       ## numerico
+x &lt;- c(TRUE, FALSE)    ## logico
+x &lt;- c(T, F)           ## logico
+x &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)  ## caracter
+x &lt;- 9:29              ## entero
+x &lt;- c(1+0i, 2+4i)     ## complejo
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-40" style="background:;">
+  <hgroup>
+    <h2>Creando vectores</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>utilizando la función <code>vector()</code> </p>
+
+<pre><code class="r">x &lt;- vector(&quot;numeric&quot;, length = 10) 
+x
+</code></pre>
+
+<pre><code>##  [1] 0 0 0 0 0 0 0 0 0 0
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-41" style="background:;">
+  <article data-timings="">
+    
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -400,6 +1016,174 @@
       <a href="#" target="_self" rel='tooltip' 
         data-slide=13 title='Generalidades de <code>R</code>'>
          13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Aritmética con <code>R</code>'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Aritmética con <code>R</code>'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Aritmética con <code>R</code>'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Números en R'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Tipos de datos en <code>R</code>'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Tipos de datos en <code>R</code>'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Tipos de datos en <code>R</code>'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Operadores relacionales'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Operadores relacionales'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Operadores de comparación'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Operadores de comparación'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Operadores lógicos'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='Operadores lógicos <code>&amp;</code>'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='Operadores lógicos <code>&amp;</code>'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='Operadores lógicos <code>|</code>'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Operadores lógicos <code>|</code>'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Operadores lógicos <code>!</code>'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='Asignación de variables'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='Asignación de variables'>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title='Asignación de variables'>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title='Asignación de variables'>
+         34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title='Funciones básicas de matematicas en <code>R</code>'>
+         35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title='Objetos en <code>R</code>'>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title='Atributos de objetos en <code>R</code>'>
+         37
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=38 title='Vectores'>
+         38
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=39 title='Creando vectores'>
+         39
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=40 title='Creando vectores'>
+         40
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=41 title='NA'>
+         41
       </a>
     </li>
   </ul>

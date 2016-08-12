@@ -180,6 +180,359 @@ La primera cosa que hay que hacer para empezar con `R` es instalarlo en su orden
 
 ### IDE
 
-Existe un entorno de desarrollo integrado disponible para R que fue desarrollado por _RStudio_. Este _IDE_, tiene un buen editor de texto gratuito, hay un visor de objetos R, y tiene todoa una serie de otras características interesantes que se integran. Para instalarlo vaya aquí <http://rstudio.com>
- 
+Existe un entorno de desarrollo integrado disponible para R que fue desarrollado por _RStudio_. Este _IDE_, tiene un buen editor de texto gratuito, hay un visor de objetos R, y tiene toda una serie de otras características interesantes que se integran. Para instalarlo vaya aquí <http://rstudio.com>
+
+---
+
+## Aritmética con `R`
+
+En su forma más básica, `R` se puede utilizar como una calculadora, considerando los siguientes operadores aritméticos.
+
+- Suma: `+`
+- Resta: `-`
+- Multiplicación: `*`
+- División: `/`
+- Potencia: `^`
+- Modulo: `%%`
+
+---
+
+
+## Aritmética con `R`
+
+```{r, warning=FALSE, message=FALSE}
+# Una suma 
+5 + 5 
+
+# Una resta
+5 - 5 
+
+# Una multiplicación 
+3 * 5
+
+```
+
+---
+
+## Aritmética con `R`
+
+```{r, warning=FALSE, message=FALSE}
+# Una división 
+(5 + 5)/2 
+
+# Una potencia
+2^5
+
+# Un modulo por divisón 
+28 %% 6
+
+```
+
+---
+
+## Números en R
+
+> - Generalmente los números en R son tratados como objetos númericos (p.e. Los números reales de doble precisión)
+> - Si específicamente quieres un entero, necesitas el prefijo ```L```
+> - Ej: Ingresar ```1``` te da un objeto numérico; ingresar ```1L```
+    explicita mente te da un entero.
+> - también existen números especiales ```Inf``` que representa infinito;
+    e.j. ```1 / 0```; ```Inf``` puede ser utilizado en cálculos ordinarios;
+    e.j. ```1 / Inf``` es 0
+> - El valor ```NaN``` representa un valor no definido (“no es número”);
+    e.j. 0 / 0; ```NaN``` también se puede obtener a través de un dato faltante (Veremos esto más tarde)
+
+---
+
+## Tipos de datos en `R` 
+
+`R` tiene cinco clases de datos básicos o “atómicos”:
+
+> - character (caracteres)
+> - numeric (números reales)
+> - integer (enteros)
+> - complex (complejos)
+> - logical (True/False)
+
+---
+
+## Tipos de datos en `R` 
+```{r}
+# Declaración de variables de distintos tipos 
+my_numeric <- 42
+my_character <- "forty-two"
+my_logical <- FALSE 
+
+```
+
+--- 
+
+## Tipos de datos en `R` 
+
+```{r}
+# Observar que tipos de datos son
+class(my_numeric)
+class(my_character)
+class(my_logical)
+```
+
+--- 
+
+
+## Operadores relacionales 
+
+La forma más básica de comparación es la igualdad, veamos brevemente como es la sintaxis de dichas comparaciones en `R`.
+
+- Igualdad: `==`
+- Desigualdad: `!=` 
+
+```{r}
+# Comparación de lógicos
+TRUE == FALSE
+
+# Comparación de númericos 
+(-6*14) != (17-101)
+
+```
+
+---
+
+## Operadores relacionales 
+
+```{r}
+# Comparación de cadena de caracteres 
+
+"useR" == "user"
+
+# Comparación de lógico con númerico
+TRUE == 1
+
+```
+
+---
+
+## Operadores de comparación 
+
+De manera similar a cualquier otro lenguaje de programación, `R` tiene las operaciones de comparación definidas por 
+
+- Mayor que: `>`
+- Menor que: `<`
+- Mayor o igual: `>=`
+- Menor o igual: `<=`
+
+---
+
+## Operadores de comparación
+
+```{r}
+# Comparación de números
+(-6*5+2) >= (-10+1)
+
+# Comparación de cadenas de caracteres 
+"raining" <= "raining dogs"
+
+# Comparación de lógicos 
+TRUE > FALSE
+```
+
+--- 
+
+## Operadores lógicos 
+
+La sintaxis de los operadores lógicos en `R`, se muestra a continuación
+
+- Operador "y": `&`
+- Operador "o": `|`
+- Operador "negación": `!`
+
+--- 
+
+## Operadores lógicos `&`
+
+```{r}
+# Solo si ambos son ciertos 
+TRUE & TRUE 
+
+FALSE & TRUE  
+
+```
+
+---
+
+## Operadores lógicos `&`
+
+```{r}
+# Si alguno de ellos es falso 
+TRUE & FALSE
+
+FALSE & FALSE
+```
+
+---
+
+## Operadores lógicos `|`
+
+```{r}
+# Si alguno de ellos es verdadero
+TRUE | TRUE 
+
+FALSE | TRUE  
+
+```
+
+---
+
+## Operadores lógicos `|`
+
+```{r}
+# Si ambos son falsos
+TRUE | FALSE
+
+FALSE | FALSE
+```
+
+---
+
+## Operadores lógicos `!`
+
+```{r}
+!TRUE
+
+!FALSE
+```
+
+---
+
+## Asignación de variables 
+
+las expresiones pueden ser escritas en la consola de `R` directamente (Interactividad). 
+
+El símbolo `<-` es el operador asignación y nos permite guardar _**variables**_ en memoria.   
+
+```{r}
+x <- 1
+print(x)
+x
+```
+
+---
+
+## Asignación de variables 
+
+```{r}
+msg <- "hola"
+print(msg)
+msg
+```
+
+---
+## Asignación de variables 
+
+```{r}
+# Se asigna un valor a las variables llamadas 'my_apples' y 'my_oranges'
+my_apples <- 5
+my_oranges<-6
+
+# Suma esa dos variables 
+(my_apples+my_oranges )
+
+# Crea una nueva variable llamada 'my_fruit'
+my_fruit<-(my_apples+my_oranges )
+my_fruit
+```
+
+--- 
+
+## Asignación de variables 
+
+```{r}
+# Asigna un valor a la variable 'my_apples'
+my_apples <- 5 
+# Imprime el valor de 'my_apples'
+my_apples       
+# Asigna el valor a la variable "my_oranges" y la imprime
+my_oranges <- "six" 
+my_oranges <-6
+# Nueva varible que contiene el total. 
+my_fruit <- my_apples + my_oranges 
+my_fruit
+```
+
+---
+
+## Funciones básicas de matematicas en `R`
+
+- Trigonométricas: `sin`, `cos`, `tan`, `asin`, `acos`, `atan`, `atan2`, `pi` 
+- Aritméticas: `sum`, `prod`, `diff`, `cumsum`, `cumprod`, `min`, `max`, `cummin`, `cummax`
+- Estadísticas: `range`, `mean`, `median`, `sd`, `var`, `cov`, `cor`, 
+- Álgebra: `solve`, `eigen`, `Arg`, `t`, `diag`
+- Misceláneas: `abs`, `round`, `log`, `log10`, `exp`, `sqrt`, `rank`, `scale`, etc.
+
+--- 
+
+## Objetos en `R`
+
+En `R` existen una serie de objetos comunes al manejo de todos los tipos de datos que conforman la base de las operaciones de cualquier cálculo. 
+
+- Vectores: `vector`
+- Matrices: `matrix` 
+- Arreglos: `array`
+- Factores: `factor`
+- Marcos de datos: `data.frame`
+- Listas: `list`
+
+--- 
+
+## Atributos de objetos en `R`
+
+Los objetos en R suelen tener ciertos atributos
+
+- names, dimnames (Nombres)
+- dimensions (p.e. matrices, arreglos)
+- class (Clase)
+- length (Longitud)
+- Otros  attributos/metadata definidos por el usuario
+
+Los atributos de un objeto pueden ser accesados por la función ```attributes```
+
+---
+
+## Vectores 
+
+El objeto más básico de `R` es el vector
+
+- Un vector solo puede contener objetos de la misma clase
+- Pero: La única excepción son las _*listas*_, las cuales representan un vector que  puede contener distintos tipos de objetos (De hecho, esa es la razón por la que las utilizamos)
+
+Los vectores vacios pueden ser creados con la función `vector()`.
+
+---
+
+## Creando vectores 
+
+La función `c()` puede ser utilizada para crear objetos tipo vector.
+
+```{r}
+x <- c(0.5, 0.6)       ## numerico
+x <- c(TRUE, FALSE)    ## logico
+x <- c(T, F)           ## logico
+x <- c("a", "b", "c")  ## caracter
+x <- 9:29              ## entero
+x <- c(1+0i, 2+4i)     ## complejo
+```
+
+---
+
+## Creando vectores 
+
+utilizando la función `vector()` 
+
+```{r}
+x <- vector("numeric", length = 10) 
+x
+```
+
+---
+
+
 
