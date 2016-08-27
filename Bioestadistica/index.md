@@ -1,4 +1,5 @@
 ---
+
 title       : Bioestadística 
 subtitle    : Programa de Biología  
 author      : Kevin Pérez - Ing de Sistemas - Estadístico - (E) MSc. Ciencia de Datos  
@@ -662,5 +663,526 @@ $$ k= 1+3.32\log(n)$$
  $$C_i=\frac{R}{K}$$
 
 > 4. Forme los intervalos de clase agregando $C_i-UMP$ al límite inferior de cada clase, comenzando por el mínimo de la distribución.
+
+---
+
+## Distribuciones de frecuencias
+
+_**Ejemplo 3:**_ Los siguientes datos corresponden al número de clientes que acudieron a un café Internet durante 40 días.
+
+30, 35, 15, 21, 18, 32, 39, 20, 19, 20,
+20, 34, 13, 13, 20, 35, 30, 17, 30, 31,
+10, 32, 22, 14, 30, 36, 23, 14, 20, 34,
+20, 28, 20, 16, 31, 38, 22, 12, 28, 13 
+
+Para elaborar la tabla de distribución de frecuencia, seguir los siguientes pasos. 
+
+- Paso 1. Ordenar de menor a mayor. 
+
+10 12 13 13 13 14 14 15 16 17 18 19 20 20 20 20 20 20 20 21 22 22 23 28 28
+30 30 30 30 31 31 32 32 34 34 35 35 36 38 39. 
+
+- Paso 2. Calcular el rango  
+$$R=Xmáx-Xmín=39-10 = 29$$ 
+
+---
+
+## Distribuciones de frecuencias
+
+- Paso 3. Calcular el número de clases y la UMP/2
+$$k=1+3.32\log(40) = 6.3 \cong 6, \hspace{1cm}UMP=1,\hspace{1cm} \mbox{Luego}\hspace{1cm} UMP/2=0.5$$
+
+> - Paso 4. Calcular el ancho de clase. 
+$$C_i=\frac{R}{k}=\frac{29}{6}=4.8\cong 5$$
+
+> - Paso 5. Formar los intervalos de clase agregando $C_i-UMP$ al límite inferior de cada clase
+$$\begin{array}
+{|c|l|l|l|l|}
+\hline
+Clase & Li & Ls & Lri & Lrs \\
+\hline
+1 & Li_{1}=Xmín & Ls_{1}=Li_{1}+C_i-UMP & Lri_{1}=Li_{1}-UMP/2 & Lrs_{1}=Ls_{1}+UMP/2\\
+2 & Li_{2}=Li_{1}+C_i & Ls_{2}=Li_{2}+C_i-UMP & Lri_{2}=Li_{2}-UMP/2 & Lrs_{2}=Ls_{3}+UMP/2\\
+3 & Li_{3}=Li_{2}+C_i & Ls_{3}=Li_{3}+C_i-UMP & Lri_{3}=Li_{3}-UMP/2 & Lrs_{3}=Ls_{3}+UMP/2\\
+4 & Li_{4}=Li_{3}+C_i & Ls_{4}=Li_{4}+C_i-UMP & Lri_{4}=Li_{4}-UMP/2 & Lrs_{4}=Ls_{4}+UMP/2\\ 
+5 & Li_{5}=Li_{4}+C_i & Ls_{5}=Li_{5}+C_i-UMP & Lri_{5}=Li_{5}-UMP/2 & Lrs_{5}=Ls_{5}+UMP/2\\
+6 & Li_{6}=Li_{5}+C_i & Ls_{6}=Li_{6}+C_i-UMP & Lri_{6}=Li_{6}-UMP/2 & Lrs_{6}=Ls_{6}+UMP/2\\
+\hline
+\end{array}
+$$
+
+---
+
+## Distribuciones de frecuencias
+
+$$\begin{array}
+{|c|ll|ll|}
+\hline
+Clase & Li & Ls & Lri & Lrs \\
+\hline
+1 & 10 & Ls_{1}=Li_{1}+C_i-UMP & Lri_{1}=Li_{1}-UMP/2 & Lrs_{1}=Ls_{1}+UMP/2\\
+2 & 15 & Ls_{2}=Li_{2}+C_i-UMP & Lri_{2}=Li_{2}-UMP/2 & Lrs_{2}=Ls_{3}+UMP/2\\
+3 & 20 & Ls_{3}=Li_{3}+C_i-UMP & Lri_{3}=Li_{3}-UMP/2 & Lrs_{3}=Ls_{3}+UMP/2\\
+4 & 25 & Ls_{4}=Li_{4}+C_i-UMP & Lri_{4}=Li_{4}-UMP/2 & Lrs_{4}=Ls_{4}+UMP/2\\ 
+5 & 30 & Ls_{5}=Li_{5}+C_i-UMP & Lri_{5}=Li_{5}-UMP/2 & Lrs_{5}=Ls_{5}+UMP/2\\
+6 & 35 & Ls_{6}=Li_{6}+C_i-UMP & Lri_{6}=Li_{6}-UMP/2 & Lrs_{6}=Ls_{6}+UMP/2\\
+\hline
+\end{array}
+$$
+
+---
+
+## Distribuciones de frecuencias
+
+$$\begin{array}
+{|c|ll|ll|}
+\hline
+Clase & Li & Ls & Lri & Lrs \\
+\hline
+1 & 10 & 14 & Lri_{1}=Li_{1}-UMP/2 & Lrs_{1}=Ls_{1}+UMP/2\\
+2 & 15 & 19 & Lri_{2}=Li_{2}-UMP/2 & Lrs_{2}=Ls_{3}+UMP/2\\
+3 & 20 & 24 & Lri_{3}=Li_{3}-UMP/2 & Lrs_{3}=Ls_{3}+UMP/2\\
+4 & 25 & 29 & Lri_{4}=Li_{4}-UMP/2 & Lrs_{4}=Ls_{4}+UMP/2\\ 
+5 & 30 & 34 & Lri_{5}=Li_{5}-UMP/2 & Lrs_{5}=Ls_{5}+UMP/2\\
+6 & 35 & 39 & Lri_{6}=Li_{6}-UMP/2 & Lrs_{6}=Ls_{6}+UMP/2\\
+\hline
+\end{array}
+$$
+
+---
+
+## Distribuciones de frecuencias
+
+$$\begin{array}
+{|c|ll|ll|}
+\hline
+Clase & Li & Ls & Lri & Lrs \\
+\hline
+1 & 10 & 14 & 9.5  & Lrs_{1}=Ls_{1}+UMP/2\\
+2 & 15 & 19 & 14.5 & Lrs_{2}=Ls_{3}+UMP/2\\
+3 & 20 & 24 & 19.5 & Lrs_{3}=Ls_{3}+UMP/2\\
+4 & 25 & 29 & 24.5 & Lrs_{4}=Ls_{4}+UMP/2\\ 
+5 & 30 & 34 & 29.5 & Lrs_{5}=Ls_{5}+UMP/2\\
+6 & 35 & 39 & 34.5 & Lrs_{6}=Ls_{6}+UMP/2\\
+\hline
+\end{array}
+$$
+
+---
+
+## Distribuciones de frecuencias
+
+$$\begin{array}
+{|c|ll|ll|}
+\hline
+Clase & Li & Ls & Lri & Lrs \\
+\hline
+1 & 10 & 14 & 9.5  & 14.5\\
+2 & 15 & 19 & 14.5 & 19.5\\
+3 & 20 & 24 & 19.5 & 24.5\\
+4 & 25 & 29 & 24.5 & 29.5\\ 
+5 & 30 & 34 & 29.5 & 34.5\\
+6 & 35 & 39 & 34.5 & 39.5\\
+\hline
+\end{array}
+$$
+
+---
+
+## Distribuciones de frecuencias
+
+$$\begin{array}
+{|c|ll|ll|l|}
+\hline
+Clase & Li & Ls & Lri & Lrs & f_i \\
+\hline
+1 & 10 & 14 & 9.5  & 14.5 & 7\\
+2 & 15 & 19 & 14.5 & 19.5 & 5\\
+3 & 20 & 24 & 19.5 & 24.5 & 11\\
+4 & 25 & 29 & 24.5 & 29.5 & 2\\ 
+5 & 30 & 34 & 29.5 & 34.5 & 10\\
+6 & 35 & 39 & 34.5 & 39.5 & 5\\
+\hline
+\end{array}
+$$
+
+---
+
+## Distribuciones de frecuencias
+
+$$\begin{array}
+{|c|ll|ll|l|l|}
+\hline
+Clase & Li & Ls & Lri & Lrs & f_i & F_i\\
+\hline
+1 & 10 & 14 & 9.5  & 14.5 & 7 &7\\
+2 & 15 & 19 & 14.5 & 19.5 & 5 &12\\
+3 & 20 & 24 & 19.5 & 24.5 & 11&23 \\
+4 & 25 & 29 & 24.5 & 29.5 & 2 &25\\ 
+5 & 30 & 34 & 29.5 & 34.5 & 10&35\\
+6 & 35 & 39 & 34.5 & 39.5 & 5 &40 \\
+\hline
+\end{array}
+$$
+
+---
+
+## Distribuciones de frecuencias
+
+$$\begin{array}
+{|c|ll|ll|l|l|l|}
+\hline
+Clase & Li & Ls & Lri & Lrs & f_i & F_i & h_i\\
+\hline
+1 & 10 & 14 & 9.5  & 14.5 & 7 &7 &0.175\\
+2 & 15 & 19 & 14.5 & 19.5 & 5 &12 &0.125\\
+3 & 20 & 24 & 19.5 & 24.5 & 11&23 &0.275\\
+4 & 25 & 29 & 24.5 & 29.5 & 2 &25&0.05\\ 
+5 & 30 & 34 & 29.5 & 34.5 & 10&35&0.25\\
+6 & 35 & 39 & 34.5 & 39.5 & 5 &40 &0.125\\
+\hline
+\end{array}
+$$
+
+---
+
+## Distribuciones de frecuencias
+
+$$\begin{array}
+{|c|ll|ll|l|l|l|l|}
+\hline
+Clase & Li & Ls & Lri & Lrs & f_i & F_i & h_i & H_i\\
+\hline
+1 & 10 & 14 & 9.5  & 14.5 & 7 &7 &0.175&0.175\\
+2 & 15 & 19 & 14.5 & 19.5 & 5 &12 &0.125&0.3\\
+3 & 20 & 24 & 19.5 & 24.5 & 11&23 &0.275&0.575\\
+4 & 25 & 29 & 24.5 & 29.5 & 2 &25&0.05&0.625\\ 
+5 & 30 & 34 & 29.5 & 34.5 & 10&35&0.25& 0.875\\
+6 & 35 & 39 & 34.5 & 39.5 & 5 &40 &0.125& 1\\
+\hline
+\end{array}
+$$
+
+---
+
+## Distribuciones de frecuencias
+
+$$\begin{array}
+{|c|ll|ll|l|l|l|l|l|}
+\hline
+Clase & Li & Ls & Lri & Lrs & f_i & F_i & h_i & H_i&x_i\\
+\hline
+1 & 10 & 14 & 9.5  & 14.5 & 7 &7 &0.175&0.175&12\\
+2 & 15 & 19 & 14.5 & 19.5 & 5 &12 &0.125&0.3&17\\
+3 & 20 & 24 & 19.5 & 24.5 & 11&23 &0.275&0.575&22\\
+4 & 25 & 29 & 24.5 & 29.5 & 2 &25&0.05&0.625&27\\ 
+5 & 30 & 34 & 29.5 & 34.5 & 10&35&0.25& 0.875&32\\
+6 & 35 & 39 & 34.5 & 39.5 & 5 &40 &0.125& 1&37\\
+\hline
+\end{array}
+$$
+
+---
+
+## Distribuciones de frecuencia
+
+_**Ejercicio 1:**_ Los siguientes datos corresponden al número de goles anotados en 40 partidos de fútbol sala en una liga local. 
+
+3, 8, 2, 3, 8, 4, 10, 15, 4, 5, 7, 12, 6, 1, 9, 6, 4, 4, 7, 13, 8, 18, 9, 2, 11, 9, 7, 2, 14, 2, 1, 24, 10, 4, 2, 7, 6, 6, 1, 8. Se pide calcular la tabla de frecuencia por intervalos. 
+
+_**Ejercicio 2:**_ Los siguientes datos se refieren al diámetro en pulgadas de un engrane. 6.75, 7.00, 7.00, 6.75, 6.50, 6.50, 7.15, 7.00, 6.50, 6.50, 6.50, 6.25, 6.25, 6.50, 6.65, 7.00, 7.25, 6.70, 6.00, 6.75, 6.00, 6.75, 6.75, 7.10, 7.00, 6.70, 6.50, 6.75, 6.25, 6.65, 6.75, 7.10, 7.25, 6.75, 6.25, 6.25, 7.00, 6.75, 7.00, 7.15 Se pide calcular la tabla de frecuencia por intervalos. 
+
+---
+
+
+## Capítulo I - Distribuciones de frecuencia - Taller No. 1
+
+_**Ejercicio 1:**_ Se ha realizado una encuesta en 30 hogares en la que se les pregunta el nº de individuos que conviven en el domicilio habitualmente. Las respuestas obtenidas han sido las siguientes: 4, 4, 1, 3, 5, 3, 2, 4, 1, 6, 2, 3, 4, 5, 5, 6, 2, 3, 3, 2, 2, 1, 8, 3, 5, 3, 4, 7, 2, 3. 
+- Calcule la distribución de frecuencias de la variable obteniendo las frecuencias absolutas, relativas y sus correspondientes acumuladas. 
+- ¿Qué porcentaje de hogares está compuesto por tres o menos personas? 
+
+_**Ejercicio 2:**_ El número de personas que se presentaron al examen para el permiso de conducir en 40 convocatorias fue: 
+58, 66, 60, 72, 66, 70, 81, 59, 73, 68, 52, 75, 73, 68, 75, 78, 65, 68, 63, 59, 74, 80, 79, 75, 76, 66, 68, 76, 72, 70, 67 63 68 80 74 64 65 79 54 59. Se pide realizar la tabla de frecuencia por intervalos. 
+
+---
+
+## Medidas de Tendencia Central 
+
+Una vez organizados los datos en su correspondiente distribución de frecuencias, se procede a dar una serie de medidas que resuman toda esa información y que, “de alguna manera”, representen a la distribución.
+
+- _**La Media Aritmética:**_  La media es una medida de representación central que se define para cada uno de los tipos de distribución como sigue:
+    * Distribución Tipo I:
+    $$\bar x=\frac{\sum_{i=1}^n x_i}{n}$$
+
+
+---
+
+
+## Medidas de Tendencia Central
+- Distribución Tipo II:
+    
+    $$\bar x=\frac{\sum_{i=1}^n x_if_i}{n}$$ Donde $x_i$ son los valores que toma la variable y $f_i$ son  las frecuencias absolutas.
+
+- Distribución Tipo III:
+    $$\bar x=\frac{\sum_{i=1}^n x_if_i}{n}$$
+    Donde $x_i$ son las denominadas marcas de clase y $f_i$ son las frecuencias absolutas.
+
+---
+
+
+## Medidas de Tendencia Central
+
+_**Ejemplo Tipo I:**_ La media de la distribución del ejemplo 1 viene dada por:    
+
+$$\bar x = \frac{(2+3+5+7+7+8+11+14+16+19+7)}{11}=\frac{99}{11}=9$$
+
+_**Ejemplo Tipo II:**_ Para los datos de la tabla ejemplo en la distribución tipo II tenemos que:
+
+$$\bar x = \frac{(2\cdot 4 + 4 \cdot 4 + 5 \cdot 3 + \cdots + 9\cdot 1)}{20}=\frac{105}{20}=25.5$$
+
+_**Ejemplo Tipo III:**_ Para los datos de la tabla del ejemplo 3 en la distribución tipo III tenemos que:
+
+$$\bar x = \frac{(7\cdot 12 + 5 \cdot 17 + 22 \cdot 11 + \cdots + 5\cdot 37)}{40}=\frac{970}{40}=24.5$$
+
+---
+
+## Medidas de Tendencia Central
+
+- _**La moda:**_ la moda absoluta de una distribución es el valor que más veces
+se repite. Se define para cada uno de los tipos de distribución como sigue:
+
+>    * Distribución Tipo I: En la distribución 2, 3, 3, 4, 6, 7, 7, 7, 10, la moda
+absoluta es 7, puesto que es el valor que se repite más veces, concretamente 3.
+
+>    * Distribución Tipo II: Si las observaciones vienen agrupadas en tablas de frecuencia de igaul forma se verifica el dato que más veces se repite.
+
+>    * Distribución Tipo III: En distribuciones por intervalos. En este caso se fija el intervalo que tenga mayor frecuencia –intervalo modal absoluto– y aquellos con frecuencia superior a la de los intervalos adyacentes –intervalos modales relativos–. Dentro de cada intervalo modal la moda corresponde al valor:
+    $$M_o=L_i+\frac{f_{i+1}}{f_{i+1}+f_{i-1}}\times C_i$$
+
+
+---
+
+## Medidas de Tendencia Central - Mediana
+
+_**La mediana:**_ La mediana es un valor que, previa ordenación, deja la mitad de las observaciones en la recta real a la izquierda y la otra mitad a la derecha. Es decir, el 50% de los datos son menores o iguales que la mediana y el otro 50% mayores o iguales a ésta. Para su cálculo y suponiendo que los valores están ordenados se procede de la siguiente manera:
+
+>    * Distribución Tipo I: Si los datos vienen dados por extensión, y hay un número impar de ellos la mediana es el elemento que se encuentra en el centro, es
+decir, 
+$$x_{(\frac{n+1}{2})}$$
+
+>    * Si el número de datos fuera par habría dos elementos centrales y la mediana se obtendría como la media de ambos, es decir:
+$$M_e=\frac{x_{(\frac{n}{2})}+x_{(\frac{n}{2}+1)}}{2}$$
+
+
+---    
+
+## Medidas de Tendencia Central - Mediana
+
+_**Ejemplo:**_ En la serie: 2, 3, 5, 7, 7, 8, 11, 14, 16, 19, la mediana se calcula como:
+
+$$ M_e=\frac{x_{(5)}+x_{(6)}}{2}=\frac{7+8}{2}=7.5$$
+
+- Distribución Tipo II: En esta se obtiene el valor $\frac{n}{2}$, luego se verifica en la columna el primer valor tal que $F_i\geq \frac{n}{2}$, si dicha frecuencia es estrictamente mayor que $\frac{n}{2}$ la mediana toma el valor de la observación que la ostenta, si por el contrario $\frac{n}{2}$ coincide con algún $F_i$ la mediana vale: 
+$$\frac{x_i+x_{i+1}}{2}$$
+
+---
+
+## Medidas de Tendencia Central - Mediana 
+
+_**Ejemplo:**_ Para los datos de la siguiente tabla se tiene que: 
+$$\begin{array}
+{|c|c|c|}
+\hline
+x_i & f_i & F_i  \\
+\hline
+27 & 1 & 1  \\
+28 & 2 & 3  \\
+29 & 6 & 9  \\
+\textbf{30} & 7 & \textbf{16}  \\
+31 & 8 & 24  \\ 
+32 & 3 & 27  \\
+33 & 3 & 30  \\
+34 & 1 & 31  \\
+\hline
+\end{array}
+$$
+
+$\frac{n}{2}=\frac{31}{2}=15.5$, entonces El $F_i=16> \frac{n}{2}=15.5$, Por tanto,
+$$M_e=30$$
+
+
+---
+
+
+## Medidas de Tendencia Central - Mediana 
+
+- Distribución Tipo III: Por último, si la distribución viene agrupada en intervalos, se construye también la columna de $F_i$ para fijar el intervalo donde se halla la mediana, éste queda determinado porque es el primero que verifica que la frecuencia acumulada del intervalo es mayor o igual que $\frac{n}{2}$ . Una vez fijado el intervalo, la mediana adopta la siguiente expresión:
+
+$$M_e=L_i + \frac{\frac{n}{2}-F_{i-1}}{f_i}\times C_i$$
+
+Donde:
+- $L_i$: Es el limite inferior de la clase mediana
+- $F_{i-1}$: Es la frecuencia absoluta acumulada anterior a la clase mediana
+- $f_i$: Es la frecuencia absoluta de la clase mediana 
+- $C_i$: Es el ancho de clase. 
+
+---
+
+## Medidas de Tendencia Central - Mediana 
+
+_**Ejemplo:**_ Para los datos de la siguiente tabla se tiene que:
+
+$$\begin{array}
+{|c|ll|ll|l|l|}
+\hline
+Clase & Li & Ls & Lri & Lrs & f_i & F_i\\
+\hline
+1 & 10 & 14 & 9.5  & 14.5 & 7 & \textbf{7}\\
+\textbf{2} & \textbf{15} & 19 & 14.5 & 19.5 & \textbf{5} &12\\
+3 & 20 & 24 & 19.5 & 24.5 & 11&23 \\
+4 & 25 & 29 & 24.5 & 29.5 & 2 &25\\ 
+5 & 30 & 34 & 29.5 & 34.5 & 10&35\\
+6 & 35 & 39 & 34.5 & 39.5 & 5 &40 \\
+\hline
+\end{array}
+$$
+
+$\frac{n}{2}=\frac{20}{2}=10$, entonces el $F_2=12 > 10$, $C_i=5$, por tanto 
+$$M_e=15+\frac{10-7}{5}\times 5=15+\frac{3}{5}\times 5=15 + 3 = 18$$
+
+--- 
+
+## Medidas de Dispersión - Varianza y DE
+
+A continuación se estudian una serie de medidas que por una parte indicarán el nivel de concentración de los datos que se están analizando y por otra informarán sobre la bondad de los promedios calculados como representantes del conjunto de datos.
+
+**Varianza y Desviación estándar**: La varianza y su raíz cuadrada positiva, la desviación estándar, son las más importantes medidas de dispersión, estando íntimamente ligadas a la media como medida de representación de ésta. Según el tipo de distribución que sigan los datos La varianza viene dada por la expresión:
+
+---
+
+## Medidas de Dispersión - Varianza y DE
+
+- Distribución Tipo I: Si los datos vienen dados por extensión la varianza y la desviación estándar vienen dadas por:
+
+$$S^2=\frac{\sum_{i=1}^n(x_i-\bar{x})^2}{n-1};\hspace{2cm}S=\sqrt{S^2}$$
+
+Donde $x_i$ son los valores que toma la variable, $\bar{x}$ es la media aritmética y $n$ es el tamaño de la muestra. 
+
+- Distribución Tipo II: Si los datos vienen organizados en una tabla de frecuencias la varianza y la desviación estándar vienen dadas por:
+
+$$S^2=\frac{\sum_{i=1}^n(x_i-\bar{x})^2f_i}{n-1};\hspace{2cm}S=\sqrt{S^2}$$
+
+Donde $x_i$ son los valores que toma la variable, $\bar{x}$ es la media aritmética, $f_i$ es la frecuencia absoluta y $n$ es el tamaño de la muestra.
+
+---
+
+## Medidas de Dispersión - Varianza y DE
+
+- Distribución Tipo III: Si los datos vienen organizados en una tabla de frecuencias por intervalos de clase, la varianza y la desviación estándar vienen dadas por:
+
+$$S^2=\frac{\sum_{i=1}^n(x_i-\bar{x})^2f_i}{n-1};\hspace{2cm}S=\sqrt{S^2}$$
+Donde $x_i$ son los valores de la marca de clase, $\bar{x}$ es la media aritmética, $f_i$ es la frecuencia absoluta y $n$ es el tamaño de la muestra.
+
+---
+
+## Medidas de Dispersión - El Rango
+
+Se define el primero como la diferencia entre el mayor y el menor de los valores. Tiene la ventaja de que es fáciles de calcular, aunque cuando hay valores aislados en las puntas de la distribución dan una visión distorsionada de la dispersión de ésta.
+
+$$R=X_{máx}-X_{mín}$$
+
+---
+
+## Medidas de Dispersión - Coeficiente de variación 
+
+Se define como el cociente entre la desviación estándar y el valor absoluto
+de la media. Se trata de una medida adimensional, tiene en cuenta el rango de valores en el que se mueve, permite comparar la dispersión de varias distribuciones, es invariante respecto a homotecias y sensible frente a traslaciones. Además de lo anterior, el coeficiente de variación da información sobre la representatividad de la media; y aunque no hay valores fijos de comparación, pues depende de circunstancias tales como el número de observaciones, se puede considerar, a efectos prácticos, una cota de 0.5 como límite para admitir que la media representa aceptablemente al conjunto de la distribución. El coeficiente de variación viene dado por: 
+
+$$CV=\frac{S}{|x|}$$
+
+---
+
+## Medidas de Posición 
+
+Se llaman medidas de posición o _cuantiles_ de orden $k$ a aquellas que dividen a la distribución en k partes, de tal forma que en cada una de esas partes haya el mismo número de elementos. De entre todas las medidas de posición destacan los cuartiles, los deciles y los percentiles. Los cuartiles dividen a la distribución en cuatro partes iguales, los deciles en diez y los percentiles en cien.
+
+Habrá, por tanto, tres cuartiles $(Q_1,Q_2,Q_3)$, nueve deciles $(D_1,D_2,\ldots, D_9)$ y, noventa y nueve percentiles $(P_1,P_2,\ldots,P_{99})$. El segundo cuartil, el quinto decil y el quincuagésimo percentil son iguales y coinciden con la mediana.
+
+---
+
+## Medidas de posición 
+
+- Distribución Tipo I: En distribuciones puntuales el cálculo es idéntico al de la mediana, siendo ahora $\frac{rn}{k}$ el valor de interés 
+
+- Distribución Tipo II y III: En distribuciones dadas en tablas de frecuencias el cálculo de los cuantiles siguen el siguiente proceso. 
+   + En primer lugar buscamos la clase donde se encuentra $F_i\geq \frac{rn}{k}$ 
+   + Luego se aplica la formula $$C_{\frac{rn}{k}}=L_{i-1}+\frac{\frac{rn}{k}-F_{i-1}}{f_i}c_i$$
+
+---
+
+## Introducción a la probabilidad 
+
+La teoría de la probabilidad es la parte de las matemáticas que se encarga del
+estudio de los fenómenos o experimentos aleatorios. Por _**experimento aleatorio**_ entenderemos todo aquel experimento que cuando se le repite bajo las mismas condiciones iniciales, el resultado que se obtiene no siempre es el mismo. El ejemplo más sencillo y cotidiano de un experimento aleatorio es el de lanzar una moneda o un dado, y aunque estos experimentos pueden parecer muy modestos, hay situaciones en donde se utilizan para tomar decisiones de cierta importancia.
+
+---
+
+## Introducción a la probabilidad 
+
+> - El _**espacio muestral**_ (o también llamado _**espacio muestra**_ de un experimento aleatorio es el conjunto de todos los posibles resultados del experimento, y se le denota generalmente por la letra griega $\Omega$. 
+
+> - Por otro lado, llamaremos _**evento**_ a cualquier subconjunto del espacio muestral y denotaremos a los eventos por las primeras letras del alfabeto en mayúsculas: $A$, $B$, $C$, etc. 
+
+---
+
+## Introducción a la probabilidad 
+
+**Ejemplo**: Si un experimento aleatorio consiste en lanzar un dado y observar el número que aparece en la cara superior, entonces claramente el espacio muestral es el conjunto $\Omega=\{1,2,3,4,5,6 \}$. Como ejemplo de un evento para este experimento podemos definir el conjunto $A = \{2, 4, 6\}$ que corresponde al suceso de obtener como resultado un número par. 
+
+Si al lanzar el dado una vez se obtiene el número “4”, decimos entonces que se observó la ocurrencia del evento $A$, y si se obtiene por ejemplo el resultado “1”, decimos que no se observó la ocurrencia del evento $A$.
+
+---
+
+## Introducción a la probabilidad 
+
+**Ejemplo**: Considere el experimento aleatorio de participar en un juego de lotería. Suponga que hay un millón de números en esta lotería y un jugador participa con un boleto. ¿Cuál es un posible espacio muestral para este experimento? Naturalmente al jugador le interesa conocer su suerte en este juego y puede proponer como espacio muestral el conjunto $\Omega =\{"ganar", "perder"\}$. 
+
+Sin embargo puede también tomarse como espacio muestral el conjunto que contiene a todos los posibles números ganadores, es decir, $\Omega= \{1, 2, \ldots, 1000000\}$ Este ejemplo sencillo muestra que el espacio muestral de un experimento aleatorio no es único y depende del interés del observador.
+
+---
+
+## Probabilidad 
+
+La **probabilidad** de un evento $A$, es un número real en el intervalo $[0,1]$ que denotaremos por $P(A)$, y representa una medida de la _**frecuencia**_ con la que se observa la ocurrencia del evento $A$ cuando se efectúa el experimento aleatorio en cuestión.
+
+**Probabilidad clásica**: Sea $A$ un subconjunto de un espacio muestral de cardinalidad finita. Se define la probabilidad clásica del evento $A$ como el cociente:
+
+$$P(A)=\frac{\#A}{\#\Omega},$$ 
+
+Donde el símbolo $\#A$ denota la cardinalidad de elementos del conjunto $A$. 
+
+---
+
+## Probabilidad 
+
+**Ejemplo**: El lanzamiento de un dado equilibrado. Para este experimento el espacio muestral es el conjunto $\Omega=\{1,2,3,4,5,6 \}$ y si deseamos calcular la probabilidad (clásica) del evento $A$ correspondiente a obtener un número par, es decir, la probabilidad de $A = \{2, 4, 6\}$, entonces 
+
+$$P(A)=\frac{\#\{2, 4, 6\}}{\#\{1,2,3,4,5,6\}}=\frac{3}{6}=\frac{1}{2}$$
+
+---
+
+## Axiomas de la probabilidad 
+
+1. $P(A)\geq 0.$
+2. $P(\Omega)=1.$
+3. $P(A\cup B)=P(A)+P(B), \hspace{1cm} \mbox{Cuando} \hspace{0.5cm} A\cap B = \emptyset$
+
+**Proposición 1**. Para cualquier evento $A$,    $P(A^c)=1-P(A)$
+
+**Proposición 2**. $P(\emptyset)=0$
+
+**Proposición 3**. Si $A\subseteq B$, entonces $P(A)\leq P(B)$
+
+**Proposición 4**. Para cualquier evento $A$, $0\leq P(A) \leq 1$
 
 ---

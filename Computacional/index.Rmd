@@ -504,7 +504,7 @@ El objeto más básico de `R` es el vector
 - Un vector solo puede contener objetos de la misma clase
 - Pero: La única excepción son las _*listas*_, las cuales representan un vector que  puede contener distintos tipos de objetos (De hecho, esa es la razón por la que las utilizamos)
 
-Los vectores vacios pueden ser creados con la función `vector()`.
+Los vectores vacíos pueden ser creados con la función `vector()`.
 
 ---
 
@@ -534,5 +534,489 @@ x
 
 ---
 
+## Matrices
+
+Las Matrices son vectores con un atributo llamado _dimensión_. El atributo dimensión hace de ella un vector de dimensión 2. 
+
+```{r}
+m <- matrix(nrow = 2, ncol = 3) 
+m
+```
+
+---
+
+## Matrices
+
+Las Matrices son vectores con un atributo llamado _dimensión_. El atributo dimensión hace de ella un vector de dimensión 2. 
+
+```{r}
+m <- matrix(nrow = 2, ncol = 3) 
+dim(m)
+attributes(m)
+```
+
+---
+
+
+## Matrices
+
+Las matrices se construyen por _column-wise_ , por lo que las entradas pueden ser considerados a partir de la esquina "superior izquierda" y corriendo por las columnas.
+
+```{r}
+m <- matrix(1:6, nrow = 2, ncol = 3) 
+m
+```
+
+---
+
+## Matrices
+
+Las matrices también pueden ser creadas directamente de los vectores añadiendo el atributo dimensión.
+
+```{r}
+m <- 1:10 
+dim(m) <- c(2, 5)
+m
+```
+
+---
+
+## cbind-ing y rbind-ing
+
+Las matrices pueden ser creadas por _column-binding_ ó _row-binding_ mediante las funciones `cbind()` y `rbind()`.
+
+```{r}
+x <- 1:3
+y <- 10:12
+cbind(x, y)
+```
+
+---
+
+## cbind-ing y rbind-ing
+
+Las matrices pueden ser creadas por _column-binding_ ó _row-binding_ mediante las funciones `cbind()` y `rbind()`.
+
+```{r}
+x <- 1:3
+y <- 10:12
+rbind(x, y) 
+```
+
+---
+
+## Factores
+
+Los factores son utilizados para representar datos categóricos. Los factores pueden ser ordenados o no ordenados. Uno puede ver un factor como un vector donde cada valor entero es una _etiqueta_.
+
+- Los factores son tratados especialmente para modelar en funciones como `lm()` y `glm()`
+
+- Utilizar factores con etiquetas es _mejor_ que utilizar enteros debido a que los factores se describen ellos mimos; Observando a una variable que tiene valores “Male” y “Female” es mejor que una variable que toma valores 1 y 2.
+
+---
+
+## Factores
+
+```{r}
+x <- factor(c("yes", "yes", "no", "yes", "no")) 
+x
+table(x) 
+```
+
+---
+
+## Factores
+
+```{r}
+x <- factor(c("yes", "yes", "no", "yes", "no")) 
+unclass(x)
+attr(x,"levels")
+```
+
+---
+
+## Factores
+
+El orden de los niveles se puede ajustar usando el argumento  `levels` en la función `factor()`. 
+```{r}
+x <- factor(c("yes", "yes", "no", "yes", "no"),
+            levels = c("yes", "no"))
+x
+```
+
+---
+
+## Listas
+
+Las listas son un tipo especial de vector que puede contener elementos con distintos tipos de clases. Listas son un tipo importante de datos en `R` y deberían conocerlo bien.
+
+```{r}
+x <- list(1, "a", TRUE, 1 + 4i) ; x
+```
+
+---
+
+## Data Frames
+
+Los Data Frames se utilizan para almacenar datos tabulares
+
+- Ellos son representados como un tipo especial de lista donde cada elemento de la lista tiene que tener la misma longitud
+
+- Cada elemento de la lista puede ser pensado como una columna y la longitud de cada elemento de la lista es el número de filas
+
+- A diferencia de las matrices, en los Data Frames se pueden almacenar diferentes clases de objetos en cada columna (al igual que las listas); matrices deben tener todos los elementos sea la misma clase
+
+- Los Data Frames También tiene un atributo especial llamado `row.names`
+
+- Los Data Frames usualmente se crean llamando a la función `read.table()` o `read.csv()`
+
+- Los Data Frames pueden ser convertidos a matrices llamando a la función `data.matrix()`
+
+---
+
+## Data Frames
+
+```{r}
+x <- data.frame(foo = 1:4, bar = c(T, T, F, F)) 
+x
+nrow(x)
+ncol(x)
+```
+
+---
+
+## Valores faltantes 
+
+Los valores faltantes son denotados por `NA` ó `NaN` para indeterminaciones matemáticas 
+
+
+- `is.na()` es utilizado para probar si existe algún `NA`
+
+- `is.nan()` es utilizado para probar si existe algún `NaN`
+
+- Los `NA` pertenecen a una clase , así, existen enteros `NA`, caracteres `NA`, etc.
+
+- Un valor `NaN` también es `NA` pero lo contrario no es cierto
+
+---
+
+## Valores faltantes 
+
+```{r}
+x <- c(1, 2, NA, 10, 3)
+is.na(x)
+is.nan(x)
+```
+
+---
+
+
+## Valores faltantes 
+
+```{r}
+x <- c(1, 2, NaN, NA, 4)
+is.na(x)
+is.nan(x)
+```
+
+---
+
+
+## Coerción
+
+Los objetos en `R` pueden ser forzados a ser de una clase u otra usando la función `as.*`, si esta disponible.
+
+```{r}
+x <- 0:6
+class(x)
+as.numeric(x)
+```
+
+---
+
+## Coerción
+
+Los objetos en `R` pueden ser forzados a ser de una clase u otra usando la función `as.*`, si esta disponible.
+
+```{r}
+as.logical(x)
+as.character(x)
+```
+
+---
+
+## Coerción 
+
+El resultado de coerciones absurdas son `NA's`.
+
+```{r}
+x <- c("a", "b", "c")
+as.numeric(x)
+```
+
+---
+
+## Coerción 
+
+El resultado de coerciones absurdas son `NA's`.
+
+```{r}
+x <- c("a", "b", "c")
+as.logical(x)
+as.complex(x)
+```
+
+---
+
+## Nombres 
+
+Los objetos en R también tienen nombres, lo cual es muy útil para escribir código legible y objetos auto-descritos.
+
+```{r}
+x <- 1:3
+names(x)
+names(x) <- c("foo", "bar", "norf") 
+x
+```
+
+---
+
+## Nombres 
+
+Los objetos en R también tienen nombres, lo cual es muy útil para escribir código legible y objetos auto-descritos.
+
+```{r}
+x <- 1:3
+names(x) <- c("foo", "bar", "norf") 
+names(x)
+```
+
+---
+
+## Nombres
+
+Las listas también pueden tener nombres.
+
+```{r}
+x <- list(a = 1, b = 2, c = 3) 
+x
+```
+
+---
+
+## Nombres 
+
+En matrices. Los nombres se forman como sigue 
+
+```{r}
+m <- matrix(1:4, nrow = 2, ncol = 2)
+dimnames(m) <- list(c("a", "b"), c("c", "d")) 
+m
+```
+
+---
+
+## Indexado de objetos en `R`.
+
+Existen una serie de operadores que pueden ser utilizados para extraer subconjuntos de los objetos de `R`.
+- `[` Siempre devuelve un objeto de la misma clase que el original; se puede utilizar para seleccionar más de un elemento 
+- `[[` se utiliza para extraer elementos de una lista o una data frame; sólo puede ser utilizado para extraer un único elemento y la clase del objeto devuelto no será necesariamente una lista o data frame
+
+- `$` se utiliza para extraer elementos de una lista o data frame por su nombre; la semántica es similar a la de `[[`.
+
+---
+
+## Indexando un vector
+
+```{r}
+x <- c("a", "b", "c", "c", "d", "a")
+x[1]
+x[2]
+x[1:4]
+```
+
+---
+
+## Indexando un vector
+
+```{r}
+x <- c("a", "b", "c", "c", "d", "a")
+x[x > "a"]
+u <- x > "a"
+u
+x[u]
+```
+
+---
+
+## Indexando una Matriz
+
+Las Matrices usualmente son indexadas mediante los indices (_i,j_) 
+
+```{r}
+x <- matrix(1:6, 2, 3)
+x[1, 2]
+x[2, 1]
+```
+
+---
+
+## Indexando una Matriz 
+
+Los indices pueden ser no definidos.
+
+```{r}
+x[1, ]
+x[, 2]
+```
+
+---
+
+## Indexando una Matriz
+
+Por defecto, cuando un solo elemento de una matriz es extraído, es devuelto como un vector de tamaño 1 antes que una matriz 1 × 1 . Este efecto puede ser modificado por `drop = FALSE`.
+
+```{r}
+x <- matrix(1:6, 2, 3)
+x[1, 2]
+x[1, 2, drop = FALSE]
+```
+
+---
+
+## Indexando una Matriz
+
+Similarmente, indexar una columna o fila te dará un vector, no una matriz (por defecto)  
+
+```{r}
+x <- matrix(1:6, 2, 3)
+x[1, ]
+x[1, , drop = FALSE]
+```
+
+---
+
+## Indexando Listas
+
+```{r}
+x <- list(foo = 1:4, bar = 0.6)
+x[1]
+x[[1]]
+```
+
+---
+
+## Indexando Listas
+
+```{r}
+x <- list(foo = 1:4, bar = 0.6)
+x$bar
+x[["bar"]]
+x["bar"]
+```
+
+---
+
+## Indexando Listas
+
+```{r}
+x <- list(foo = 1:4, bar = 0.6, baz = "hello")
+x[c(1, 3)]
+```
+
+---
+
+## Indexando Listas
+
+El operador `[[` puede ser utilizado con _indeces_ calculados; `$` puede ser utilizado con nombres laterales.
+
+```{r}
+x <- list(foo = 1:4, bar = 0.6, baz = "hello")
+name <- "foo"
+x[[name]]  
+```
+
+---
+
+## Indexando Listas
+
+El operador `[[` puede ser utilizado con _indeces_ calculados; `$` puede ser utilizado con nombres laterales.
+
+```{r}
+x <- list(foo = 1:4, bar = 0.6, baz = "hello")
+x$name     
+x$foo
+```
+
+---
+
+## Indexando elementos anidados de una Lista
+
+El operador `[[` puede tomar una secuencia de enteros.
+
+```{r}
+x <- list(a = list(10, 12, 14), b = c(3.14, 2.81))
+x[[c(1, 3)]]
+x[[1]][[3]]
+x[[c(2, 1)]]
+```
+
+---
+
+## Emparejamiento parcial
+
+El emparejamiento parcial de nombres se hace con `[[` y `$`.
+
+```{r}
+x <- list(aardvark = 1:5)
+x$a
+x[["a"]]
+x[["a", exact = FALSE]]
+```
+
+---
+
+## Remover valores `NA's` 
+
+Una tarea común debido a la indexación, consiste en eliminar valores perdidos (`NA's`).
+
+```{r}
+x <- c(1, 2, NA, 4, NA, 5)
+bad <- is.na(x)
+bad
+x[!bad]
+```
+
+---
+
+## Removiendo valores `NA's` 
+
+¿Qué pasa si hay múltiples variables y se quiere tomar el subconjunto sin valores perdidos?
+
+```{r}
+x <- c(1, 2, NA, 4, NA, 5)
+y <- c("a", "b", NA, "d", NA, "f")
+good <- complete.cases(x, y)
+x[good]
+y[good]
+```
+
+---
+
+## Removiendo valores `NA's` 
+
+```{r}
+data(airquality)
+airquality[1:6, ]
+```
+
+---
+
+## Removiendo valores `NA's` 
+
+```{r}
+good <- complete.cases(airquality)
+airquality[good, ][1:6, ]
+```
 
 

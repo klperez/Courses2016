@@ -968,6 +968,739 @@ L_{I_{r}}-L_{S_{r}} & f_r & N_r = n & f_r & H_r =1 & x_r\\
 </slide>
 
 <slide class="" id="slide-46" style="background:;">
+  <hgroup>
+    <h2>Distribuciones de frecuencias</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><em><strong>Ejemplo 3:</strong></em> Los siguientes datos corresponden al número de clientes que acudieron a un café Internet durante 40 días.</p>
+
+<p>30, 35, 15, 21, 18, 32, 39, 20, 19, 20,
+20, 34, 13, 13, 20, 35, 30, 17, 30, 31,
+10, 32, 22, 14, 30, 36, 23, 14, 20, 34,
+20, 28, 20, 16, 31, 38, 22, 12, 28, 13 </p>
+
+<p>Para elaborar la tabla de distribución de frecuencia, seguir los siguientes pasos. </p>
+
+<ul>
+<li>Paso 1. Ordenar de menor a mayor. </li>
+</ul>
+
+<p>10 12 13 13 13 14 14 15 16 17 18 19 20 20 20 20 20 20 20 21 22 22 23 28 28
+30 30 30 30 31 31 32 32 34 34 35 35 36 38 39. </p>
+
+<ul>
+<li>Paso 2. Calcular el rango<br>
+\[R=Xmáx-Xmín=39-10 = 29\] </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-47" style="background:;">
+  <hgroup>
+    <h2>Distribuciones de frecuencias</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Paso 3. Calcular el número de clases y la UMP/2
+\[k=1+3.32\log(40) = 6.3 \cong 6, \hspace{1cm}UMP=1,\hspace{1cm} \mbox{Luego}\hspace{1cm} UMP/2=0.5\]</li>
+</ul>
+
+<ul class = "build incremental">
+<li><p>Paso 4. Calcular el ancho de clase. 
+\[C_i=\frac{R}{k}=\frac{29}{6}=4.8\cong 5\]</p></li>
+<li><p>Paso 5. Formar los intervalos de clase agregando \(C_i-UMP\) al límite inferior de cada clase
+\[\begin{array}
+{|c|l|l|l|l|}
+\hline
+Clase & Li & Ls & Lri & Lrs \\
+\hline
+1 & Li_{1}=Xmín & Ls_{1}=Li_{1}+C_i-UMP & Lri_{1}=Li_{1}-UMP/2 & Lrs_{1}=Ls_{1}+UMP/2\\
+2 & Li_{2}=Li_{1}+C_i & Ls_{2}=Li_{2}+C_i-UMP & Lri_{2}=Li_{2}-UMP/2 & Lrs_{2}=Ls_{3}+UMP/2\\
+3 & Li_{3}=Li_{2}+C_i & Ls_{3}=Li_{3}+C_i-UMP & Lri_{3}=Li_{3}-UMP/2 & Lrs_{3}=Ls_{3}+UMP/2\\
+4 & Li_{4}=Li_{3}+C_i & Ls_{4}=Li_{4}+C_i-UMP & Lri_{4}=Li_{4}-UMP/2 & Lrs_{4}=Ls_{4}+UMP/2\\ 
+5 & Li_{5}=Li_{4}+C_i & Ls_{5}=Li_{5}+C_i-UMP & Lri_{5}=Li_{5}-UMP/2 & Lrs_{5}=Ls_{5}+UMP/2\\
+6 & Li_{6}=Li_{5}+C_i & Ls_{6}=Li_{6}+C_i-UMP & Lri_{6}=Li_{6}-UMP/2 & Lrs_{6}=Ls_{6}+UMP/2\\
+\hline
+\end{array}
+\]</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-48" style="background:;">
+  <hgroup>
+    <h2>Distribuciones de frecuencias</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>\[\begin{array}
+{|c|ll|ll|}
+\hline
+Clase & Li & Ls & Lri & Lrs \\
+\hline
+1 & 10 & Ls_{1}=Li_{1}+C_i-UMP & Lri_{1}=Li_{1}-UMP/2 & Lrs_{1}=Ls_{1}+UMP/2\\
+2 & 15 & Ls_{2}=Li_{2}+C_i-UMP & Lri_{2}=Li_{2}-UMP/2 & Lrs_{2}=Ls_{3}+UMP/2\\
+3 & 20 & Ls_{3}=Li_{3}+C_i-UMP & Lri_{3}=Li_{3}-UMP/2 & Lrs_{3}=Ls_{3}+UMP/2\\
+4 & 25 & Ls_{4}=Li_{4}+C_i-UMP & Lri_{4}=Li_{4}-UMP/2 & Lrs_{4}=Ls_{4}+UMP/2\\ 
+5 & 30 & Ls_{5}=Li_{5}+C_i-UMP & Lri_{5}=Li_{5}-UMP/2 & Lrs_{5}=Ls_{5}+UMP/2\\
+6 & 35 & Ls_{6}=Li_{6}+C_i-UMP & Lri_{6}=Li_{6}-UMP/2 & Lrs_{6}=Ls_{6}+UMP/2\\
+\hline
+\end{array}
+\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-49" style="background:;">
+  <hgroup>
+    <h2>Distribuciones de frecuencias</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>\[\begin{array}
+{|c|ll|ll|}
+\hline
+Clase & Li & Ls & Lri & Lrs \\
+\hline
+1 & 10 & 14 & Lri_{1}=Li_{1}-UMP/2 & Lrs_{1}=Ls_{1}+UMP/2\\
+2 & 15 & 19 & Lri_{2}=Li_{2}-UMP/2 & Lrs_{2}=Ls_{3}+UMP/2\\
+3 & 20 & 24 & Lri_{3}=Li_{3}-UMP/2 & Lrs_{3}=Ls_{3}+UMP/2\\
+4 & 25 & 29 & Lri_{4}=Li_{4}-UMP/2 & Lrs_{4}=Ls_{4}+UMP/2\\ 
+5 & 30 & 34 & Lri_{5}=Li_{5}-UMP/2 & Lrs_{5}=Ls_{5}+UMP/2\\
+6 & 35 & 39 & Lri_{6}=Li_{6}-UMP/2 & Lrs_{6}=Ls_{6}+UMP/2\\
+\hline
+\end{array}
+\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-50" style="background:;">
+  <hgroup>
+    <h2>Distribuciones de frecuencias</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>\[\begin{array}
+{|c|ll|ll|}
+\hline
+Clase & Li & Ls & Lri & Lrs \\
+\hline
+1 & 10 & 14 & 9.5  & Lrs_{1}=Ls_{1}+UMP/2\\
+2 & 15 & 19 & 14.5 & Lrs_{2}=Ls_{3}+UMP/2\\
+3 & 20 & 24 & 19.5 & Lrs_{3}=Ls_{3}+UMP/2\\
+4 & 25 & 29 & 24.5 & Lrs_{4}=Ls_{4}+UMP/2\\ 
+5 & 30 & 34 & 29.5 & Lrs_{5}=Ls_{5}+UMP/2\\
+6 & 35 & 39 & 34.5 & Lrs_{6}=Ls_{6}+UMP/2\\
+\hline
+\end{array}
+\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-51" style="background:;">
+  <hgroup>
+    <h2>Distribuciones de frecuencias</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>\[\begin{array}
+{|c|ll|ll|}
+\hline
+Clase & Li & Ls & Lri & Lrs \\
+\hline
+1 & 10 & 14 & 9.5  & 14.5\\
+2 & 15 & 19 & 14.5 & 19.5\\
+3 & 20 & 24 & 19.5 & 24.5\\
+4 & 25 & 29 & 24.5 & 29.5\\ 
+5 & 30 & 34 & 29.5 & 34.5\\
+6 & 35 & 39 & 34.5 & 39.5\\
+\hline
+\end{array}
+\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-52" style="background:;">
+  <hgroup>
+    <h2>Distribuciones de frecuencias</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>\[\begin{array}
+{|c|ll|ll|l|}
+\hline
+Clase & Li & Ls & Lri & Lrs & f_i \\
+\hline
+1 & 10 & 14 & 9.5  & 14.5 & 7\\
+2 & 15 & 19 & 14.5 & 19.5 & 5\\
+3 & 20 & 24 & 19.5 & 24.5 & 11\\
+4 & 25 & 29 & 24.5 & 29.5 & 2\\ 
+5 & 30 & 34 & 29.5 & 34.5 & 10\\
+6 & 35 & 39 & 34.5 & 39.5 & 5\\
+\hline
+\end{array}
+\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-53" style="background:;">
+  <hgroup>
+    <h2>Distribuciones de frecuencias</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>\[\begin{array}
+{|c|ll|ll|l|l|}
+\hline
+Clase & Li & Ls & Lri & Lrs & f_i & F_i\\
+\hline
+1 & 10 & 14 & 9.5  & 14.5 & 7 &7\\
+2 & 15 & 19 & 14.5 & 19.5 & 5 &12\\
+3 & 20 & 24 & 19.5 & 24.5 & 11&23 \\
+4 & 25 & 29 & 24.5 & 29.5 & 2 &25\\ 
+5 & 30 & 34 & 29.5 & 34.5 & 10&35\\
+6 & 35 & 39 & 34.5 & 39.5 & 5 &40 \\
+\hline
+\end{array}
+\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-54" style="background:;">
+  <hgroup>
+    <h2>Distribuciones de frecuencias</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>\[\begin{array}
+{|c|ll|ll|l|l|l|}
+\hline
+Clase & Li & Ls & Lri & Lrs & f_i & F_i & h_i\\
+\hline
+1 & 10 & 14 & 9.5  & 14.5 & 7 &7 &0.175\\
+2 & 15 & 19 & 14.5 & 19.5 & 5 &12 &0.125\\
+3 & 20 & 24 & 19.5 & 24.5 & 11&23 &0.275\\
+4 & 25 & 29 & 24.5 & 29.5 & 2 &25&0.05\\ 
+5 & 30 & 34 & 29.5 & 34.5 & 10&35&0.25\\
+6 & 35 & 39 & 34.5 & 39.5 & 5 &40 &0.125\\
+\hline
+\end{array}
+\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-55" style="background:;">
+  <hgroup>
+    <h2>Distribuciones de frecuencias</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>\[\begin{array}
+{|c|ll|ll|l|l|l|l|}
+\hline
+Clase & Li & Ls & Lri & Lrs & f_i & F_i & h_i & H_i\\
+\hline
+1 & 10 & 14 & 9.5  & 14.5 & 7 &7 &0.175&0.175\\
+2 & 15 & 19 & 14.5 & 19.5 & 5 &12 &0.125&0.3\\
+3 & 20 & 24 & 19.5 & 24.5 & 11&23 &0.275&0.575\\
+4 & 25 & 29 & 24.5 & 29.5 & 2 &25&0.05&0.625\\ 
+5 & 30 & 34 & 29.5 & 34.5 & 10&35&0.25& 0.875\\
+6 & 35 & 39 & 34.5 & 39.5 & 5 &40 &0.125& 1\\
+\hline
+\end{array}
+\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-56" style="background:;">
+  <hgroup>
+    <h2>Distribuciones de frecuencias</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>\[\begin{array}
+{|c|ll|ll|l|l|l|l|l|}
+\hline
+Clase & Li & Ls & Lri & Lrs & f_i & F_i & h_i & H_i&x_i\\
+\hline
+1 & 10 & 14 & 9.5  & 14.5 & 7 &7 &0.175&0.175&12\\
+2 & 15 & 19 & 14.5 & 19.5 & 5 &12 &0.125&0.3&17\\
+3 & 20 & 24 & 19.5 & 24.5 & 11&23 &0.275&0.575&22\\
+4 & 25 & 29 & 24.5 & 29.5 & 2 &25&0.05&0.625&27\\ 
+5 & 30 & 34 & 29.5 & 34.5 & 10&35&0.25& 0.875&32\\
+6 & 35 & 39 & 34.5 & 39.5 & 5 &40 &0.125& 1&37\\
+\hline
+\end{array}
+\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-57" style="background:;">
+  <hgroup>
+    <h2>Distribuciones de frecuencia</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><em><strong>Ejercicio 1:</strong></em> Los siguientes datos corresponden al número de goles anotados en 40 partidos de fútbol sala en una liga local. </p>
+
+<p>3, 8, 2, 3, 8, 4, 10, 15, 4, 5, 7, 12, 6, 1, 9, 6, 4, 4, 7, 13, 8, 18, 9, 2, 11, 9, 7, 2, 14, 2, 1, 24, 10, 4, 2, 7, 6, 6, 1, 8. Se pide calcular la tabla de frecuencia por intervalos. </p>
+
+<p><em><strong>Ejercicio 2:</strong></em> Los siguientes datos se refieren al diámetro en pulgadas de un engrane. 6.75, 7.00, 7.00, 6.75, 6.50, 6.50, 7.15, 7.00, 6.50, 6.50, 6.50, 6.25, 6.25, 6.50, 6.65, 7.00, 7.25, 6.70, 6.00, 6.75, 6.00, 6.75, 6.75, 7.10, 7.00, 6.70, 6.50, 6.75, 6.25, 6.65, 6.75, 7.10, 7.25, 6.75, 6.25, 6.25, 7.00, 6.75, 7.00, 7.15 Se pide calcular la tabla de frecuencia por intervalos. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-58" style="background:;">
+  <hgroup>
+    <h2>Capítulo I - Distribuciones de frecuencia - Taller No. 1</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><em><strong>Ejercicio 1:</strong></em> Se ha realizado una encuesta en 30 hogares en la que se les pregunta el nº de individuos que conviven en el domicilio habitualmente. Las respuestas obtenidas han sido las siguientes: 4, 4, 1, 3, 5, 3, 2, 4, 1, 6, 2, 3, 4, 5, 5, 6, 2, 3, 3, 2, 2, 1, 8, 3, 5, 3, 4, 7, 2, 3. </p>
+
+<ul>
+<li>Calcule la distribución de frecuencias de la variable obteniendo las frecuencias absolutas, relativas y sus correspondientes acumuladas. </li>
+<li>¿Qué porcentaje de hogares está compuesto por tres o menos personas? </li>
+</ul>
+
+<p><em><strong>Ejercicio 2:</strong></em> El número de personas que se presentaron al examen para el permiso de conducir en 40 convocatorias fue: 
+58, 66, 60, 72, 66, 70, 81, 59, 73, 68, 52, 75, 73, 68, 75, 78, 65, 68, 63, 59, 74, 80, 79, 75, 76, 66, 68, 76, 72, 70, 67 63 68 80 74 64 65 79 54 59. Se pide realizar la tabla de frecuencia por intervalos. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-59" style="background:;">
+  <hgroup>
+    <h2>Medidas de Tendencia Central</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Una vez organizados los datos en su correspondiente distribución de frecuencias, se procede a dar una serie de medidas que resuman toda esa información y que, “de alguna manera”, representen a la distribución.</p>
+
+<ul>
+<li><em><strong>La Media Aritmética:</strong></em>  La media es una medida de representación central que se define para cada uno de los tipos de distribución como sigue:
+
+<ul>
+<li>Distribución Tipo I:
+\[\bar x=\frac{\sum_{i=1}^n x_i}{n}\]</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-60" style="background:;">
+  <hgroup>
+    <h2>Medidas de Tendencia Central</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Distribución Tipo II:</p>
+
+<p>\[\bar x=\frac{\sum_{i=1}^n x_if_i}{n}\] Donde \(x_i\) son los valores que toma la variable y \(f_i\) son  las frecuencias absolutas.</p></li>
+<li><p>Distribución Tipo III:
+\[\bar x=\frac{\sum_{i=1}^n x_if_i}{n}\]
+Donde \(x_i\) son las denominadas marcas de clase y \(f_i\) son las frecuencias absolutas.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-61" style="background:;">
+  <hgroup>
+    <h2>Medidas de Tendencia Central</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><em><strong>Ejemplo Tipo I:</strong></em> La media de la distribución del ejemplo 1 viene dada por:    </p>
+
+<p>\[\bar x = \frac{(2+3+5+7+7+8+11+14+16+19+7)}{11}=\frac{99}{11}=9\]</p>
+
+<p><em><strong>Ejemplo Tipo II:</strong></em> Para los datos de la tabla ejemplo en la distribución tipo II tenemos que:</p>
+
+<p>\[\bar x = \frac{(2\cdot 4 + 4 \cdot 4 + 5 \cdot 3 + \cdots + 9\cdot 1)}{20}=\frac{105}{20}=25.5\]</p>
+
+<p><em><strong>Ejemplo Tipo III:</strong></em> Para los datos de la tabla del ejemplo 3 en la distribución tipo III tenemos que:</p>
+
+<p>\[\bar x = \frac{(7\cdot 12 + 5 \cdot 17 + 22 \cdot 11 + \cdots + 5\cdot 37)}{40}=\frac{970}{40}=24.5\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-62" style="background:;">
+  <hgroup>
+    <h2>Medidas de Tendencia Central</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><em><strong>La moda:</strong></em> la moda absoluta de una distribución es el valor que más veces
+se repite. Se define para cada uno de los tipos de distribución como sigue:</li>
+</ul>
+
+<ul class = "build incremental">
+<li><p>Distribución Tipo I: En la distribución 2, 3, 3, 4, 6, 7, 7, 7, 10, la moda
+absoluta es 7, puesto que es el valor que se repite más veces, concretamente 3.</p></li>
+<li><p>Distribución Tipo II: Si las observaciones vienen agrupadas en tablas de frecuencia de igaul forma se verifica el dato que más veces se repite.</p></li>
+<li><p>Distribución Tipo III: En distribuciones por intervalos. En este caso se fija el intervalo que tenga mayor frecuencia –intervalo modal absoluto– y aquellos con frecuencia superior a la de los intervalos adyacentes –intervalos modales relativos–. Dentro de cada intervalo modal la moda corresponde al valor:
+\[M_o=L_i+\frac{f_{i+1}}{f_{i+1}+f_{i-1}}\times C_i\]</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-63" style="background:;">
+  <hgroup>
+    <h2>Medidas de Tendencia Central - Mediana</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><em><strong>La mediana:</strong></em> La mediana es un valor que, previa ordenación, deja la mitad de las observaciones en la recta real a la izquierda y la otra mitad a la derecha. Es decir, el 50% de los datos son menores o iguales que la mediana y el otro 50% mayores o iguales a ésta. Para su cálculo y suponiendo que los valores están ordenados se procede de la siguiente manera:</p>
+
+<ul class = "build incremental">
+<li><p>Distribución Tipo I: Si los datos vienen dados por extensión, y hay un número impar de ellos la mediana es el elemento que se encuentra en el centro, es
+decir, 
+\[x_{(\frac{n+1}{2})}\]</p></li>
+<li><p>Si el número de datos fuera par habría dos elementos centrales y la mediana se obtendría como la media de ambos, es decir:
+\[M_e=\frac{x_{(\frac{n}{2})}+x_{(\frac{n}{2}+1)}}{2}\]</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-64" style="background:;">
+  <hgroup>
+    <h2>Medidas de Tendencia Central - Mediana</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><em><strong>Ejemplo:</strong></em> En la serie: 2, 3, 5, 7, 7, 8, 11, 14, 16, 19, la mediana se calcula como:</p>
+
+<p>\[ M_e=\frac{x_{(5)}+x_{(6)}}{2}=\frac{7+8}{2}=7.5\]</p>
+
+<ul>
+<li>Distribución Tipo II: En esta se obtiene el valor \(\frac{n}{2}\), luego se verifica en la columna el primer valor tal que \(F_i\geq \frac{n}{2}\), si dicha frecuencia es estrictamente mayor que \(\frac{n}{2}\) la mediana toma el valor de la observación que la ostenta, si por el contrario \(\frac{n}{2}\) coincide con algún \(F_i\) la mediana vale: 
+\[\frac{x_i+x_{i+1}}{2}\]</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-65" style="background:;">
+  <hgroup>
+    <h2>Medidas de Tendencia Central - Mediana</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><em><strong>Ejemplo:</strong></em> Para los datos de la siguiente tabla se tiene que: 
+\[\begin{array}
+{|c|c|c|}
+\hline
+x_i & f_i & F_i  \\
+\hline
+27 & 1 & 1  \\
+28 & 2 & 3  \\
+29 & 6 & 9  \\
+\textbf{30} & 7 & \textbf{16}  \\
+31 & 8 & 24  \\ 
+32 & 3 & 27  \\
+33 & 3 & 30  \\
+34 & 1 & 31  \\
+\hline
+\end{array}
+\]</p>
+
+<p>\(\frac{n}{2}=\frac{31}{2}=15.5\), entonces El \(F_i=16> \frac{n}{2}=15.5\), Por tanto,
+\[M_e=30\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-66" style="background:;">
+  <hgroup>
+    <h2>Medidas de Tendencia Central - Mediana</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Distribución Tipo III: Por último, si la distribución viene agrupada en intervalos, se construye también la columna de \(F_i\) para fijar el intervalo donde se halla la mediana, éste queda determinado porque es el primero que verifica que la frecuencia acumulada del intervalo es mayor o igual que \(\frac{n}{2}\) . Una vez fijado el intervalo, la mediana adopta la siguiente expresión:</li>
+</ul>
+
+<p>\[M_e=L_i + \frac{\frac{n}{2}-F_{i-1}}{f_i}\times C_i\]</p>
+
+<p>Donde:</p>
+
+<ul>
+<li>\(L_i\): Es el limite inferior de la clase mediana</li>
+<li>\(F_{i-1}\): Es la frecuencia absoluta acumulada anterior a la clase mediana</li>
+<li>\(f_i\): Es la frecuencia absoluta de la clase mediana </li>
+<li>\(C_i\): Es el ancho de clase. </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-67" style="background:;">
+  <hgroup>
+    <h2>Medidas de Tendencia Central - Mediana</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><em><strong>Ejemplo:</strong></em> Para los datos de la siguiente tabla se tiene que:</p>
+
+<p>\[\begin{array}
+{|c|ll|ll|l|l|}
+\hline
+Clase & Li & Ls & Lri & Lrs & f_i & F_i\\
+\hline
+1 & 10 & 14 & 9.5  & 14.5 & 7 & \textbf{7}\\
+\textbf{2} & \textbf{15} & 19 & 14.5 & 19.5 & \textbf{5} &12\\
+3 & 20 & 24 & 19.5 & 24.5 & 11&23 \\
+4 & 25 & 29 & 24.5 & 29.5 & 2 &25\\ 
+5 & 30 & 34 & 29.5 & 34.5 & 10&35\\
+6 & 35 & 39 & 34.5 & 39.5 & 5 &40 \\
+\hline
+\end{array}
+\]</p>
+
+<p>\(\frac{n}{2}=\frac{20}{2}=10\), entonces el \(F_2=12 > 10\), \(C_i=5\), por tanto 
+\[M_e=15+\frac{10-7}{5}\times 5=15+\frac{3}{5}\times 5=15 + 3 = 18\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-68" style="background:;">
+  <hgroup>
+    <h2>Medidas de Dispersión - Varianza y DE</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>A continuación se estudian una serie de medidas que por una parte indicarán el nivel de concentración de los datos que se están analizando y por otra informarán sobre la bondad de los promedios calculados como representantes del conjunto de datos.</p>
+
+<p><strong>Varianza y Desviación estándar</strong>: La varianza y su raíz cuadrada positiva, la desviación estándar, son las más importantes medidas de dispersión, estando íntimamente ligadas a la media como medida de representación de ésta. Según el tipo de distribución que sigan los datos La varianza viene dada por la expresión:</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-69" style="background:;">
+  <hgroup>
+    <h2>Medidas de Dispersión - Varianza y DE</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Distribución Tipo I: Si los datos vienen dados por extensión la varianza y la desviación estándar vienen dadas por:</li>
+</ul>
+
+<p>\[S^2=\frac{\sum_{i=1}^n(x_i-\bar{x})^2}{n-1};\hspace{2cm}S=\sqrt{S^2}\]</p>
+
+<p>Donde \(x_i\) son los valores que toma la variable, \(\bar{x}\) es la media aritmética y \(n\) es el tamaño de la muestra. </p>
+
+<ul>
+<li>Distribución Tipo II: Si los datos vienen organizados en una tabla de frecuencias la varianza y la desviación estándar vienen dadas por:</li>
+</ul>
+
+<p>\[S^2=\frac{\sum_{i=1}^n(x_i-\bar{x})^2f_i}{n-1};\hspace{2cm}S=\sqrt{S^2}\]</p>
+
+<p>Donde \(x_i\) son los valores que toma la variable, \(\bar{x}\) es la media aritmética, \(f_i\) es la frecuencia absoluta y \(n\) es el tamaño de la muestra.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-70" style="background:;">
+  <hgroup>
+    <h2>Medidas de Dispersión - Varianza y DE</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Distribución Tipo III: Si los datos vienen organizados en una tabla de frecuencias por intervalos de clase, la varianza y la desviación estándar vienen dadas por:</li>
+</ul>
+
+<p>\[S^2=\frac{\sum_{i=1}^n(x_i-\bar{x})^2f_i}{n-1};\hspace{2cm}S=\sqrt{S^2}\]
+Donde \(x_i\) son los valores de la marca de clase, \(\bar{x}\) es la media aritmética, \(f_i\) es la frecuencia absoluta y \(n\) es el tamaño de la muestra.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-71" style="background:;">
+  <hgroup>
+    <h2>Medidas de Dispersión - El Rango</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Se define el primero como la diferencia entre el mayor y el menor de los valores. Tiene la ventaja de que es fáciles de calcular, aunque cuando hay valores aislados en las puntas de la distribución dan una visión distorsionada de la dispersión de ésta.</p>
+
+<p>\[R=X_{máx}-X_{mín}\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-72" style="background:;">
+  <hgroup>
+    <h2>Medidas de Dispersión - Coeficiente de variación</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Se define como el cociente entre la desviación estándar y el valor absoluto
+de la media. Se trata de una medida adimensional, tiene en cuenta el rango de valores en el que se mueve, permite comparar la dispersión de varias distribuciones, es invariante respecto a homotecias y sensible frente a traslaciones. Además de lo anterior, el coeficiente de variación da información sobre la representatividad de la media; y aunque no hay valores fijos de comparación, pues depende de circunstancias tales como el número de observaciones, se puede considerar, a efectos prácticos, una cota de 0.5 como límite para admitir que la media representa aceptablemente al conjunto de la distribución. El coeficiente de variación viene dado por: </p>
+
+<p>\[CV=\frac{S}{|x|}\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-73" style="background:;">
+  <hgroup>
+    <h2>Medidas de Posición</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Se llaman medidas de posición o <em>cuantiles</em> de orden \(k\) a aquellas que dividen a la distribución en k partes, de tal forma que en cada una de esas partes haya el mismo número de elementos. De entre todas las medidas de posición destacan los cuartiles, los deciles y los percentiles. Los cuartiles dividen a la distribución en cuatro partes iguales, los deciles en diez y los percentiles en cien.</p>
+
+<p>Habrá, por tanto, tres cuartiles \((Q_1,Q_2,Q_3)\), nueve deciles \((D_1,D_2,\ldots, D_9)\) y, noventa y nueve percentiles \((P_1,P_2,\ldots,P_{99})\). El segundo cuartil, el quinto decil y el quincuagésimo percentil son iguales y coinciden con la mediana.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-74" style="background:;">
+  <hgroup>
+    <h2>Medidas de posición</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Distribución Tipo I: En distribuciones puntuales el cálculo es idéntico al de la mediana, siendo ahora \(\frac{rn}{k}\) el valor de interés </p></li>
+<li><p>Distribución Tipo II y III: En distribuciones dadas en tablas de frecuencias el cálculo de los cuantiles siguen el siguiente proceso. </p>
+
+<ul>
+<li>En primer lugar buscamos la clase donde se encuentra \(F_i\geq \frac{rn}{k}\) </li>
+<li>Luego se aplica la formula \[C_{\frac{rn}{k}}=L_{i-1}+\frac{\frac{rn}{k}-F_{i-1}}{f_i}c_i\]</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-75" style="background:;">
+  <hgroup>
+    <h2>Introducción a la probabilidad</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>La teoría de la probabilidad es la parte de las matemáticas que se encarga del
+estudio de los fenómenos o experimentos aleatorios. Por <em><strong>experimento aleatorio</strong></em> entenderemos todo aquel experimento que cuando se le repite bajo las mismas condiciones iniciales, el resultado que se obtiene no siempre es el mismo. El ejemplo más sencillo y cotidiano de un experimento aleatorio es el de lanzar una moneda o un dado, y aunque estos experimentos pueden parecer muy modestos, hay situaciones en donde se utilizan para tomar decisiones de cierta importancia.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-76" style="background:;">
+  <hgroup>
+    <h2>Introducción a la probabilidad</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li><p>El <em><strong>espacio muestral</strong></em> (o también llamado <em><strong>espacio muestra</strong></em> de un experimento aleatorio es el conjunto de todos los posibles resultados del experimento, y se le denota generalmente por la letra griega \(\Omega\). </p></li>
+<li><p>Por otro lado, llamaremos <em><strong>evento</strong></em> a cualquier subconjunto del espacio muestral y denotaremos a los eventos por las primeras letras del alfabeto en mayúsculas: \(A\), \(B\), \(C\), etc. </p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-77" style="background:;">
+  <hgroup>
+    <h2>Introducción a la probabilidad</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Ejemplo</strong>: Si un experimento aleatorio consiste en lanzar un dado y observar el número que aparece en la cara superior, entonces claramente el espacio muestral es el conjunto \(\Omega=\{1,2,3,4,5,6 \}\). Como ejemplo de un evento para este experimento podemos definir el conjunto \(A = \{2, 4, 6\}\) que corresponde al suceso de obtener como resultado un número par. </p>
+
+<p>Si al lanzar el dado una vez se obtiene el número “4”, decimos entonces que se observó la ocurrencia del evento \(A\), y si se obtiene por ejemplo el resultado “1”, decimos que no se observó la ocurrencia del evento \(A\).</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-78" style="background:;">
+  <hgroup>
+    <h2>Introducción a la probabilidad</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Ejemplo</strong>: Considere el experimento aleatorio de participar en un juego de lotería. Suponga que hay un millón de números en esta lotería y un jugador participa con un boleto. ¿Cuál es un posible espacio muestral para este experimento? Naturalmente al jugador le interesa conocer su suerte en este juego y puede proponer como espacio muestral el conjunto \(\Omega =\{"ganar", "perder"\}\). </p>
+
+<p>Sin embargo puede también tomarse como espacio muestral el conjunto que contiene a todos los posibles números ganadores, es decir, \(\Omega= \{1, 2, \ldots, 1000000\}\) Este ejemplo sencillo muestra que el espacio muestral de un experimento aleatorio no es único y depende del interés del observador.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-79" style="background:;">
+  <hgroup>
+    <h2>Probabilidad</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>La <strong>probabilidad</strong> de un evento \(A\), es un número real en el intervalo \([0,1]\) que denotaremos por \(P(A)\), y representa una medida de la <em><strong>frecuencia</strong></em> con la que se observa la ocurrencia del evento \(A\) cuando se efectúa el experimento aleatorio en cuestión.</p>
+
+<p><strong>Probabilidad clásica</strong>: Sea \(A\) un subconjunto de un espacio muestral de cardinalidad finita. Se define la probabilidad clásica del evento \(A\) como el cociente:</p>
+
+<p>\[P(A)=\frac{\#A}{\#\Omega},\] </p>
+
+<p>Donde el símbolo \(\#A\) denota la cardinalidad de elementos del conjunto \(A\). </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-80" style="background:;">
+  <hgroup>
+    <h2>Probabilidad</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Ejemplo</strong>: El lanzamiento de un dado equilibrado. Para este experimento el espacio muestral es el conjunto \(\Omega=\{1,2,3,4,5,6 \}\) y si deseamos calcular la probabilidad (clásica) del evento \(A\) correspondiente a obtener un número par, es decir, la probabilidad de \(A = \{2, 4, 6\}\), entonces </p>
+
+<p>\[P(A)=\frac{\#\{2, 4, 6\}}{\#\{1,2,3,4,5,6\}}=\frac{3}{6}=\frac{1}{2}\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-81" style="background:;">
+  <hgroup>
+    <h2>Axiomas de la probabilidad</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>\(P(A)\geq 0.\)</li>
+<li>\(P(\Omega)=1.\)</li>
+<li>\(P(A\cup B)=P(A)+P(B), \hspace{1cm} \mbox{Cuando} \hspace{0.5cm} A\cap B = \emptyset\)</li>
+</ol>
+
+<p><strong>Proposición 1</strong>. Para cualquier evento \(A\),    \(P(A^c)=1-P(A)\)</p>
+
+<p><strong>Proposición 2</strong>. \(P(\emptyset)=0\)</p>
+
+<p><strong>Proposición 3</strong>. Si \(A\subseteq B\), entonces \(P(A)\leq P(B)\)</p>
+
+<p><strong>Proposición 4</strong>. Para cualquier evento \(A\), \(0\leq P(A) \leq 1\)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-82" style="background:;">
   <article data-timings="">
     
   </article>
@@ -1250,8 +1983,224 @@ L_{I_{r}}-L_{S_{r}} & f_r & N_r = n & f_r & H_r =1 & x_r\\
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=46 title='NA'>
+        data-slide=46 title='Distribuciones de frecuencias'>
          46
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='Distribuciones de frecuencias'>
+         47
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title='Distribuciones de frecuencias'>
+         48
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=49 title='Distribuciones de frecuencias'>
+         49
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=50 title='Distribuciones de frecuencias'>
+         50
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=51 title='Distribuciones de frecuencias'>
+         51
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=52 title='Distribuciones de frecuencias'>
+         52
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=53 title='Distribuciones de frecuencias'>
+         53
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=54 title='Distribuciones de frecuencias'>
+         54
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=55 title='Distribuciones de frecuencias'>
+         55
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=56 title='Distribuciones de frecuencias'>
+         56
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=57 title='Distribuciones de frecuencia'>
+         57
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=58 title='Capítulo I - Distribuciones de frecuencia - Taller No. 1'>
+         58
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=59 title='Medidas de Tendencia Central'>
+         59
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=60 title='Medidas de Tendencia Central'>
+         60
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=61 title='Medidas de Tendencia Central'>
+         61
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=62 title='Medidas de Tendencia Central'>
+         62
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=63 title='Medidas de Tendencia Central - Mediana'>
+         63
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=64 title='Medidas de Tendencia Central - Mediana'>
+         64
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=65 title='Medidas de Tendencia Central - Mediana'>
+         65
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=66 title='Medidas de Tendencia Central - Mediana'>
+         66
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=67 title='Medidas de Tendencia Central - Mediana'>
+         67
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=68 title='Medidas de Dispersión - Varianza y DE'>
+         68
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=69 title='Medidas de Dispersión - Varianza y DE'>
+         69
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=70 title='Medidas de Dispersión - Varianza y DE'>
+         70
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=71 title='Medidas de Dispersión - El Rango'>
+         71
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=72 title='Medidas de Dispersión - Coeficiente de variación'>
+         72
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=73 title='Medidas de Posición'>
+         73
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=74 title='Medidas de posición'>
+         74
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=75 title='Introducción a la probabilidad'>
+         75
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=76 title='Introducción a la probabilidad'>
+         76
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=77 title='Introducción a la probabilidad'>
+         77
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=78 title='Introducción a la probabilidad'>
+         78
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=79 title='Probabilidad'>
+         79
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=80 title='Probabilidad'>
+         80
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=81 title='Axiomas de la probabilidad'>
+         81
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=82 title='NA'>
+         82
       </a>
     </li>
   </ul>

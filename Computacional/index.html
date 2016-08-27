@@ -886,7 +886,7 @@ my_fruit
 <li>Pero: La única excepción son las <em><em>listas</em></em>, las cuales representan un vector que  puede contener distintos tipos de objetos (De hecho, esa es la razón por la que las utilizamos)</li>
 </ul>
 
-<p>Los vectores vacios pueden ser creados con la función <code>vector()</code>.</p>
+<p>Los vectores vacíos pueden ser creados con la función <code>vector()</code>.</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -930,8 +930,983 @@ x
 </slide>
 
 <slide class="" id="slide-41" style="background:;">
+  <hgroup>
+    <h2>Matrices</h2>
+  </hgroup>
   <article data-timings="">
-    
+    <p>Las Matrices son vectores con un atributo llamado <em>dimensión</em>. El atributo dimensión hace de ella un vector de dimensión 2. </p>
+
+<pre><code class="r">m &lt;- matrix(nrow = 2, ncol = 3) 
+m
+</code></pre>
+
+<pre><code>##      [,1] [,2] [,3]
+## [1,]   NA   NA   NA
+## [2,]   NA   NA   NA
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-42" style="background:;">
+  <hgroup>
+    <h2>Matrices</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Las Matrices son vectores con un atributo llamado <em>dimensión</em>. El atributo dimensión hace de ella un vector de dimensión 2. </p>
+
+<pre><code class="r">m &lt;- matrix(nrow = 2, ncol = 3) 
+dim(m)
+</code></pre>
+
+<pre><code>## [1] 2 3
+</code></pre>
+
+<pre><code class="r">attributes(m)
+</code></pre>
+
+<pre><code>## $dim
+## [1] 2 3
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-43" style="background:;">
+  <hgroup>
+    <h2>Matrices</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Las matrices se construyen por <em>column-wise</em> , por lo que las entradas pueden ser considerados a partir de la esquina &quot;superior izquierda&quot; y corriendo por las columnas.</p>
+
+<pre><code class="r">m &lt;- matrix(1:6, nrow = 2, ncol = 3) 
+m
+</code></pre>
+
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-44" style="background:;">
+  <hgroup>
+    <h2>Matrices</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Las matrices también pueden ser creadas directamente de los vectores añadiendo el atributo dimensión.</p>
+
+<pre><code class="r">m &lt;- 1:10 
+dim(m) &lt;- c(2, 5)
+m
+</code></pre>
+
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    3    5    7    9
+## [2,]    2    4    6    8   10
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-45" style="background:;">
+  <hgroup>
+    <h2>cbind-ing y rbind-ing</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Las matrices pueden ser creadas por <em>column-binding</em> ó <em>row-binding</em> mediante las funciones <code>cbind()</code> y <code>rbind()</code>.</p>
+
+<pre><code class="r">x &lt;- 1:3
+y &lt;- 10:12
+cbind(x, y)
+</code></pre>
+
+<pre><code>##      x  y
+## [1,] 1 10
+## [2,] 2 11
+## [3,] 3 12
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-46" style="background:;">
+  <hgroup>
+    <h2>cbind-ing y rbind-ing</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Las matrices pueden ser creadas por <em>column-binding</em> ó <em>row-binding</em> mediante las funciones <code>cbind()</code> y <code>rbind()</code>.</p>
+
+<pre><code class="r">x &lt;- 1:3
+y &lt;- 10:12
+rbind(x, y) 
+</code></pre>
+
+<pre><code>##   [,1] [,2] [,3]
+## x    1    2    3
+## y   10   11   12
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-47" style="background:;">
+  <hgroup>
+    <h2>Factores</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Los factores son utilizados para representar datos categóricos. Los factores pueden ser ordenados o no ordenados. Uno puede ver un factor como un vector donde cada valor entero es una <em>etiqueta</em>.</p>
+
+<ul>
+<li><p>Los factores son tratados especialmente para modelar en funciones como <code>lm()</code> y <code>glm()</code></p></li>
+<li><p>Utilizar factores con etiquetas es <em>mejor</em> que utilizar enteros debido a que los factores se describen ellos mimos; Observando a una variable que tiene valores “Male” y “Female” es mejor que una variable que toma valores 1 y 2.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-48" style="background:;">
+  <hgroup>
+    <h2>Factores</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">x &lt;- factor(c(&quot;yes&quot;, &quot;yes&quot;, &quot;no&quot;, &quot;yes&quot;, &quot;no&quot;)) 
+x
+</code></pre>
+
+<pre><code>## [1] yes yes no  yes no 
+## Levels: no yes
+</code></pre>
+
+<pre><code class="r">table(x) 
+</code></pre>
+
+<pre><code>## x
+##  no yes 
+##   2   3
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-49" style="background:;">
+  <hgroup>
+    <h2>Factores</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">x &lt;- factor(c(&quot;yes&quot;, &quot;yes&quot;, &quot;no&quot;, &quot;yes&quot;, &quot;no&quot;)) 
+unclass(x)
+</code></pre>
+
+<pre><code>## [1] 2 2 1 2 1
+## attr(,&quot;levels&quot;)
+## [1] &quot;no&quot;  &quot;yes&quot;
+</code></pre>
+
+<pre><code class="r">attr(x,&quot;levels&quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;no&quot;  &quot;yes&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-50" style="background:;">
+  <hgroup>
+    <h2>Factores</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>El orden de los niveles se puede ajustar usando el argumento  <code>levels</code> en la función <code>factor()</code>. </p>
+
+<pre><code class="r">x &lt;- factor(c(&quot;yes&quot;, &quot;yes&quot;, &quot;no&quot;, &quot;yes&quot;, &quot;no&quot;),
+            levels = c(&quot;yes&quot;, &quot;no&quot;))
+x
+</code></pre>
+
+<pre><code>## [1] yes yes no  yes no 
+## Levels: yes no
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-51" style="background:;">
+  <hgroup>
+    <h2>Listas</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Las listas son un tipo especial de vector que puede contener elementos con distintos tipos de clases. Listas son un tipo importante de datos en <code>R</code> y deberían conocerlo bien.</p>
+
+<pre><code class="r">x &lt;- list(1, &quot;a&quot;, TRUE, 1 + 4i) ; x
+</code></pre>
+
+<pre><code>## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] &quot;a&quot;
+## 
+## [[3]]
+## [1] TRUE
+## 
+## [[4]]
+## [1] 1+4i
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-52" style="background:;">
+  <hgroup>
+    <h2>Data Frames</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Los Data Frames se utilizan para almacenar datos tabulares</p>
+
+<ul>
+<li><p>Ellos son representados como un tipo especial de lista donde cada elemento de la lista tiene que tener la misma longitud</p></li>
+<li><p>Cada elemento de la lista puede ser pensado como una columna y la longitud de cada elemento de la lista es el número de filas</p></li>
+<li><p>A diferencia de las matrices, en los Data Frames se pueden almacenar diferentes clases de objetos en cada columna (al igual que las listas); matrices deben tener todos los elementos sea la misma clase</p></li>
+<li><p>Los Data Frames También tiene un atributo especial llamado <code>row.names</code></p></li>
+<li><p>Los Data Frames usualmente se crean llamando a la función <code>read.table()</code> o <code>read.csv()</code></p></li>
+<li><p>Los Data Frames pueden ser convertidos a matrices llamando a la función <code>data.matrix()</code></p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-53" style="background:;">
+  <hgroup>
+    <h2>Data Frames</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">x &lt;- data.frame(foo = 1:4, bar = c(T, T, F, F)) 
+x
+</code></pre>
+
+<pre><code>##   foo   bar
+## 1   1  TRUE
+## 2   2  TRUE
+## 3   3 FALSE
+## 4   4 FALSE
+</code></pre>
+
+<pre><code class="r">nrow(x)
+</code></pre>
+
+<pre><code>## [1] 4
+</code></pre>
+
+<pre><code class="r">ncol(x)
+</code></pre>
+
+<pre><code>## [1] 2
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-54" style="background:;">
+  <hgroup>
+    <h2>Valores faltantes</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Los valores faltantes son denotados por <code>NA</code> ó <code>NaN</code> para indeterminaciones matemáticas </p>
+
+<ul>
+<li><p><code>is.na()</code> es utilizado para probar si existe algún <code>NA</code></p></li>
+<li><p><code>is.nan()</code> es utilizado para probar si existe algún <code>NaN</code></p></li>
+<li><p>Los <code>NA</code> pertenecen a una clase , así, existen enteros <code>NA</code>, caracteres <code>NA</code>, etc.</p></li>
+<li><p>Un valor <code>NaN</code> también es <code>NA</code> pero lo contrario no es cierto</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-55" style="background:;">
+  <hgroup>
+    <h2>Valores faltantes</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">x &lt;- c(1, 2, NA, 10, 3)
+is.na(x)
+</code></pre>
+
+<pre><code>## [1] FALSE FALSE  TRUE FALSE FALSE
+</code></pre>
+
+<pre><code class="r">is.nan(x)
+</code></pre>
+
+<pre><code>## [1] FALSE FALSE FALSE FALSE FALSE
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-56" style="background:;">
+  <hgroup>
+    <h2>Valores faltantes</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">x &lt;- c(1, 2, NaN, NA, 4)
+is.na(x)
+</code></pre>
+
+<pre><code>## [1] FALSE FALSE  TRUE  TRUE FALSE
+</code></pre>
+
+<pre><code class="r">is.nan(x)
+</code></pre>
+
+<pre><code>## [1] FALSE FALSE  TRUE FALSE FALSE
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-57" style="background:;">
+  <hgroup>
+    <h2>Coerción</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Los objetos en <code>R</code> pueden ser forzados a ser de una clase u otra usando la función <code>as.*</code>, si esta disponible.</p>
+
+<pre><code class="r">x &lt;- 0:6
+class(x)
+</code></pre>
+
+<pre><code>## [1] &quot;integer&quot;
+</code></pre>
+
+<pre><code class="r">as.numeric(x)
+</code></pre>
+
+<pre><code>## [1] 0 1 2 3 4 5 6
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-58" style="background:;">
+  <hgroup>
+    <h2>Coerción</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Los objetos en <code>R</code> pueden ser forzados a ser de una clase u otra usando la función <code>as.*</code>, si esta disponible.</p>
+
+<pre><code class="r">as.logical(x)
+</code></pre>
+
+<pre><code>## [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+</code></pre>
+
+<pre><code class="r">as.character(x)
+</code></pre>
+
+<pre><code>## [1] &quot;0&quot; &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;5&quot; &quot;6&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-59" style="background:;">
+  <hgroup>
+    <h2>Coerción</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>El resultado de coerciones absurdas son <code>NA&#39;s</code>.</p>
+
+<pre><code class="r">x &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)
+as.numeric(x)
+</code></pre>
+
+<pre><code>## Warning: NAs introducidos por coerción
+</code></pre>
+
+<pre><code>## [1] NA NA NA
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-60" style="background:;">
+  <hgroup>
+    <h2>Coerción</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>El resultado de coerciones absurdas son <code>NA&#39;s</code>.</p>
+
+<pre><code class="r">x &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)
+as.logical(x)
+</code></pre>
+
+<pre><code>## [1] NA NA NA
+</code></pre>
+
+<pre><code class="r">as.complex(x)
+</code></pre>
+
+<pre><code>## Warning: NAs introducidos por coerción
+</code></pre>
+
+<pre><code>## [1] NA NA NA
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-61" style="background:;">
+  <hgroup>
+    <h2>Nombres</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Los objetos en R también tienen nombres, lo cual es muy útil para escribir código legible y objetos auto-descritos.</p>
+
+<pre><code class="r">x &lt;- 1:3
+names(x)
+</code></pre>
+
+<pre><code>## NULL
+</code></pre>
+
+<pre><code class="r">names(x) &lt;- c(&quot;foo&quot;, &quot;bar&quot;, &quot;norf&quot;) 
+x
+</code></pre>
+
+<pre><code>##  foo  bar norf 
+##    1    2    3
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-62" style="background:;">
+  <hgroup>
+    <h2>Nombres</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Los objetos en R también tienen nombres, lo cual es muy útil para escribir código legible y objetos auto-descritos.</p>
+
+<pre><code class="r">x &lt;- 1:3
+names(x) &lt;- c(&quot;foo&quot;, &quot;bar&quot;, &quot;norf&quot;) 
+names(x)
+</code></pre>
+
+<pre><code>## [1] &quot;foo&quot;  &quot;bar&quot;  &quot;norf&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-63" style="background:;">
+  <hgroup>
+    <h2>Nombres</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Las listas también pueden tener nombres.</p>
+
+<pre><code class="r">x &lt;- list(a = 1, b = 2, c = 3) 
+x
+</code></pre>
+
+<pre><code>## $a
+## [1] 1
+## 
+## $b
+## [1] 2
+## 
+## $c
+## [1] 3
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-64" style="background:;">
+  <hgroup>
+    <h2>Nombres</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>En matrices. Los nombres se forman como sigue </p>
+
+<pre><code class="r">m &lt;- matrix(1:4, nrow = 2, ncol = 2)
+dimnames(m) &lt;- list(c(&quot;a&quot;, &quot;b&quot;), c(&quot;c&quot;, &quot;d&quot;)) 
+m
+</code></pre>
+
+<pre><code>##   c d
+## a 1 3
+## b 2 4
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-65" style="background:;">
+  <hgroup>
+    <h2>Indexado de objetos en <code>R</code>.</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Existen una serie de operadores que pueden ser utilizados para extraer subconjuntos de los objetos de <code>R</code>.</p>
+
+<ul>
+<li><code>[</code> Siempre devuelve un objeto de la misma clase que el original; se puede utilizar para seleccionar más de un elemento </li>
+<li><p><code>[[</code> se utiliza para extraer elementos de una lista o una data frame; sólo puede ser utilizado para extraer un único elemento y la clase del objeto devuelto no será necesariamente una lista o data frame</p></li>
+<li><p><code>$</code> se utiliza para extraer elementos de una lista o data frame por su nombre; la semántica es similar a la de <code>[[</code>.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-66" style="background:;">
+  <hgroup>
+    <h2>Indexando un vector</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">x &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;c&quot;, &quot;d&quot;, &quot;a&quot;)
+x[1]
+</code></pre>
+
+<pre><code>## [1] &quot;a&quot;
+</code></pre>
+
+<pre><code class="r">x[2]
+</code></pre>
+
+<pre><code>## [1] &quot;b&quot;
+</code></pre>
+
+<pre><code class="r">x[1:4]
+</code></pre>
+
+<pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;c&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-67" style="background:;">
+  <hgroup>
+    <h2>Indexando un vector</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">x &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;c&quot;, &quot;d&quot;, &quot;a&quot;)
+x[x &gt; &quot;a&quot;]
+</code></pre>
+
+<pre><code>## [1] &quot;b&quot; &quot;c&quot; &quot;c&quot; &quot;d&quot;
+</code></pre>
+
+<pre><code class="r">u &lt;- x &gt; &quot;a&quot;
+u
+</code></pre>
+
+<pre><code>## [1] FALSE  TRUE  TRUE  TRUE  TRUE FALSE
+</code></pre>
+
+<pre><code class="r">x[u]
+</code></pre>
+
+<pre><code>## [1] &quot;b&quot; &quot;c&quot; &quot;c&quot; &quot;d&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-68" style="background:;">
+  <hgroup>
+    <h2>Indexando una Matriz</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Las Matrices usualmente son indexadas mediante los indices (<em>i,j</em>) </p>
+
+<pre><code class="r">x &lt;- matrix(1:6, 2, 3)
+x[1, 2]
+</code></pre>
+
+<pre><code>## [1] 3
+</code></pre>
+
+<pre><code class="r">x[2, 1]
+</code></pre>
+
+<pre><code>## [1] 2
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-69" style="background:;">
+  <hgroup>
+    <h2>Indexando una Matriz</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Los indices pueden ser no definidos.</p>
+
+<pre><code class="r">x[1, ]
+</code></pre>
+
+<pre><code>## [1] 1 3 5
+</code></pre>
+
+<pre><code class="r">x[, 2]
+</code></pre>
+
+<pre><code>## [1] 3 4
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-70" style="background:;">
+  <hgroup>
+    <h2>Indexando una Matriz</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Por defecto, cuando un solo elemento de una matriz es extraído, es devuelto como un vector de tamaño 1 antes que una matriz 1 × 1 . Este efecto puede ser modificado por <code>drop = FALSE</code>.</p>
+
+<pre><code class="r">x &lt;- matrix(1:6, 2, 3)
+x[1, 2]
+</code></pre>
+
+<pre><code>## [1] 3
+</code></pre>
+
+<pre><code class="r">x[1, 2, drop = FALSE]
+</code></pre>
+
+<pre><code>##      [,1]
+## [1,]    3
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-71" style="background:;">
+  <hgroup>
+    <h2>Indexando una Matriz</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Similarmente, indexar una columna o fila te dará un vector, no una matriz (por defecto)  </p>
+
+<pre><code class="r">x &lt;- matrix(1:6, 2, 3)
+x[1, ]
+</code></pre>
+
+<pre><code>## [1] 1 3 5
+</code></pre>
+
+<pre><code class="r">x[1, , drop = FALSE]
+</code></pre>
+
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    3    5
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-72" style="background:;">
+  <hgroup>
+    <h2>Indexando Listas</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">x &lt;- list(foo = 1:4, bar = 0.6)
+x[1]
+</code></pre>
+
+<pre><code>## $foo
+## [1] 1 2 3 4
+</code></pre>
+
+<pre><code class="r">x[[1]]
+</code></pre>
+
+<pre><code>## [1] 1 2 3 4
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-73" style="background:;">
+  <hgroup>
+    <h2>Indexando Listas</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">x &lt;- list(foo = 1:4, bar = 0.6)
+x$bar
+</code></pre>
+
+<pre><code>## [1] 0.6
+</code></pre>
+
+<pre><code class="r">x[[&quot;bar&quot;]]
+</code></pre>
+
+<pre><code>## [1] 0.6
+</code></pre>
+
+<pre><code class="r">x[&quot;bar&quot;]
+</code></pre>
+
+<pre><code>## $bar
+## [1] 0.6
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-74" style="background:;">
+  <hgroup>
+    <h2>Indexando Listas</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">x &lt;- list(foo = 1:4, bar = 0.6, baz = &quot;hello&quot;)
+x[c(1, 3)]
+</code></pre>
+
+<pre><code>## $foo
+## [1] 1 2 3 4
+## 
+## $baz
+## [1] &quot;hello&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-75" style="background:;">
+  <hgroup>
+    <h2>Indexando Listas</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>El operador <code>[[</code> puede ser utilizado con <em>indeces</em> calculados; <code>$</code> puede ser utilizado con nombres laterales.</p>
+
+<pre><code class="r">x &lt;- list(foo = 1:4, bar = 0.6, baz = &quot;hello&quot;)
+name &lt;- &quot;foo&quot;
+x[[name]]  
+</code></pre>
+
+<pre><code>## [1] 1 2 3 4
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-76" style="background:;">
+  <hgroup>
+    <h2>Indexando Listas</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>El operador <code>[[</code> puede ser utilizado con <em>indeces</em> calculados; <code>$</code> puede ser utilizado con nombres laterales.</p>
+
+<pre><code class="r">x &lt;- list(foo = 1:4, bar = 0.6, baz = &quot;hello&quot;)
+x$name     
+</code></pre>
+
+<pre><code>## NULL
+</code></pre>
+
+<pre><code class="r">x$foo
+</code></pre>
+
+<pre><code>## [1] 1 2 3 4
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-77" style="background:;">
+  <hgroup>
+    <h2>Indexando elementos anidados de una Lista</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>El operador <code>[[</code> puede tomar una secuencia de enteros.</p>
+
+<pre><code class="r">x &lt;- list(a = list(10, 12, 14), b = c(3.14, 2.81))
+x[[c(1, 3)]]
+</code></pre>
+
+<pre><code>## [1] 14
+</code></pre>
+
+<pre><code class="r">x[[1]][[3]]
+</code></pre>
+
+<pre><code>## [1] 14
+</code></pre>
+
+<pre><code class="r">x[[c(2, 1)]]
+</code></pre>
+
+<pre><code>## [1] 3.14
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-78" style="background:;">
+  <hgroup>
+    <h2>Emparejamiento parcial</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>El emparejamiento parcial de nombres se hace con <code>[[</code> y <code>$</code>.</p>
+
+<pre><code class="r">x &lt;- list(aardvark = 1:5)
+x$a
+</code></pre>
+
+<pre><code>## [1] 1 2 3 4 5
+</code></pre>
+
+<pre><code class="r">x[[&quot;a&quot;]]
+</code></pre>
+
+<pre><code>## NULL
+</code></pre>
+
+<pre><code class="r">x[[&quot;a&quot;, exact = FALSE]]
+</code></pre>
+
+<pre><code>## [1] 1 2 3 4 5
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-79" style="background:;">
+  <hgroup>
+    <h2>Remover valores <code>NA&#39;s</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Una tarea común debido a la indexación, consiste en eliminar valores perdidos (<code>NA&#39;s</code>).</p>
+
+<pre><code class="r">x &lt;- c(1, 2, NA, 4, NA, 5)
+bad &lt;- is.na(x)
+bad
+</code></pre>
+
+<pre><code>## [1] FALSE FALSE  TRUE FALSE  TRUE FALSE
+</code></pre>
+
+<pre><code class="r">x[!bad]
+</code></pre>
+
+<pre><code>## [1] 1 2 4 5
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-80" style="background:;">
+  <hgroup>
+    <h2>Removiendo valores <code>NA&#39;s</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <p>¿Qué pasa si hay múltiples variables y se quiere tomar el subconjunto sin valores perdidos?</p>
+
+<pre><code class="r">x &lt;- c(1, 2, NA, 4, NA, 5)
+y &lt;- c(&quot;a&quot;, &quot;b&quot;, NA, &quot;d&quot;, NA, &quot;f&quot;)
+good &lt;- complete.cases(x, y)
+x[good]
+</code></pre>
+
+<pre><code>## [1] 1 2 4 5
+</code></pre>
+
+<pre><code class="r">y[good]
+</code></pre>
+
+<pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;d&quot; &quot;f&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-81" style="background:;">
+  <hgroup>
+    <h2>Removiendo valores <code>NA&#39;s</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">data(airquality)
+airquality[1:6, ]
+</code></pre>
+
+<pre><code>##   Ozone Solar.R Wind Temp Month Day
+## 1    41     190  7.4   67     5   1
+## 2    36     118  8.0   72     5   2
+## 3    12     149 12.6   74     5   3
+## 4    18     313 11.5   62     5   4
+## 5    NA      NA 14.3   56     5   5
+## 6    28      NA 14.9   66     5   6
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-82" style="background:;">
+  <hgroup>
+    <h2>Removiendo valores <code>NA&#39;s</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">good &lt;- complete.cases(airquality)
+airquality[good, ][1:6, ]
+</code></pre>
+
+<pre><code>##   Ozone Solar.R Wind Temp Month Day
+## 1    41     190  7.4   67     5   1
+## 2    36     118  8.0   72     5   2
+## 3    12     149 12.6   74     5   3
+## 4    18     313 11.5   62     5   4
+## 7    23     299  8.6   65     5   7
+## 8    19      99 13.8   59     5   8
+</code></pre>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -1182,8 +2157,254 @@ x
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=41 title='NA'>
+        data-slide=41 title='Matrices'>
          41
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=42 title='Matrices'>
+         42
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=43 title='Matrices'>
+         43
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=44 title='Matrices'>
+         44
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=45 title='cbind-ing y rbind-ing'>
+         45
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=46 title='cbind-ing y rbind-ing'>
+         46
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='Factores'>
+         47
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title='Factores'>
+         48
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=49 title='Factores'>
+         49
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=50 title='Factores'>
+         50
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=51 title='Listas'>
+         51
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=52 title='Data Frames'>
+         52
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=53 title='Data Frames'>
+         53
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=54 title='Valores faltantes'>
+         54
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=55 title='Valores faltantes'>
+         55
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=56 title='Valores faltantes'>
+         56
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=57 title='Coerción'>
+         57
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=58 title='Coerción'>
+         58
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=59 title='Coerción'>
+         59
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=60 title='Coerción'>
+         60
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=61 title='Nombres'>
+         61
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=62 title='Nombres'>
+         62
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=63 title='Nombres'>
+         63
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=64 title='Nombres'>
+         64
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=65 title='Indexado de objetos en <code>R</code>.'>
+         65
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=66 title='Indexando un vector'>
+         66
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=67 title='Indexando un vector'>
+         67
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=68 title='Indexando una Matriz'>
+         68
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=69 title='Indexando una Matriz'>
+         69
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=70 title='Indexando una Matriz'>
+         70
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=71 title='Indexando una Matriz'>
+         71
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=72 title='Indexando Listas'>
+         72
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=73 title='Indexando Listas'>
+         73
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=74 title='Indexando Listas'>
+         74
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=75 title='Indexando Listas'>
+         75
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=76 title='Indexando Listas'>
+         76
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=77 title='Indexando elementos anidados de una Lista'>
+         77
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=78 title='Emparejamiento parcial'>
+         78
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=79 title='Remover valores <code>NA&#39;s</code>'>
+         79
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=80 title='Removiendo valores <code>NA&#39;s</code>'>
+         80
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=81 title='Removiendo valores <code>NA&#39;s</code>'>
+         81
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=82 title='Removiendo valores <code>NA&#39;s</code>'>
+         82
       </a>
     </li>
   </ul>
